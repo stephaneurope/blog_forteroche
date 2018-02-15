@@ -1,20 +1,88 @@
 /* explication*/
 
+
+/*MENU*/
+
+.navbar {
+    background: #202938;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar li a {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+    color: #202938 !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-style: none;
+}
+
+.icon-bar {
+    background-color: #fff !important;
+}
+
+#paysage {
+    text-align: center;
+    width: 70%;
+    max-height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1,
 h3 {
     text-align: center;
 }
 
-h3 {
-    background-color: black;
+.news h3 {
+    background-color: #202938;
     color: white;
     font-size: 0.9em;
     margin-bottom: 0px;
+    padding: 15px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .news p {
     background-color: #CCCCCC;
     margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+form {
+    background-color: #CCCCCC;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 30%;
+}
+
+.news textarea {
+    width: 50%;
 }
 
 .news {
@@ -22,8 +90,61 @@ h3 {
     margin: auto;
 }
 
-a {
+.news a {
     text-decoration: none;
     color: blue;
+    float: right;
+    color: #fff;
+    font-weight: bold;
+    background-color: #202938;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
+.comment h3 {
+    background-color: #202938;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 0px;
+    padding: 15px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.modif {
+    text-decoration: none;
+    color: blue;
+    color: #fff;
+    font-weight: bold;
+}
+
+.auth {
+    width: 50%;
+}
+
+.submit {
+    text-decoration: none;
+    color: blue;
+    float: right;
+    color: #fff;
+    font-weight: bold;
+    background-color: #202938;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#footer {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #202938;
+    color: #fff;
+}
