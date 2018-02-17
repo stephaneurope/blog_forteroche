@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>
-        <?= $title ?>
-    </title>
     <link href="public/css/style.css" rel="stylesheet" /> </head>
+<title>
+    <?= $title ?>
+</title>
 
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">

@@ -35,7 +35,7 @@
 </html>
 <?php
 require('controller/frontend.php');
-
+require_once('view/frontend/view.php');
 try{
     if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {

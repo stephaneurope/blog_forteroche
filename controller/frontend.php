@@ -3,13 +3,14 @@
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-
+ require_once('view/frontend/view.php');
 function listPosts()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
-
-    require('view/frontend/listPostsView.php');
+    $view = new View('listPostsView');
+   $view->generer(array('posts' => $posts));
+    
 }
 
 function post()
@@ -19,8 +20,11 @@ function post()
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
+    $view = new View('postView');
+   $view->generer(array('post' => $post,'comments' => $comments));
+   
 
-    require('view/frontend/postView.php');
+    
 }
 function addComment($postId, $author, $comment)
 {
