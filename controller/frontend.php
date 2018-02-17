@@ -4,6 +4,11 @@
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
  require_once('view/frontend/view.php');
+
+class FrontendController{
+  
+   
+    
 function listPosts()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
@@ -59,3 +64,5 @@ $comment = $commentManager->getComment($_GET['id']); require('view/frontend/chan
 
 function changeComment($commentId) 
 { require('view/frontend/changePostView.php'); }
+    
+    }

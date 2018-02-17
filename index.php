@@ -35,15 +35,17 @@
 </html>
 <?php
 require('controller/frontend.php');
-require_once('view/frontend/view.php');
+require_once('view/frontend/view.php'); 
+$ctrlfrontend = new FrontendController;
 try{
     if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {
-        listPosts();
+        $ctrlfrontend->listPosts();
     }
     elseif ($_GET['action'] == 'post') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
-            post();
+      
+            $ctrlfrontend->post();
         }
         else {
             echo 'Erreur : aucun identifiant de billet envoyé';
@@ -51,7 +53,8 @@ try{
     }
         elseif ($_GET['action'] == 'comment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
-            comment();
+            
+            $ctrlfrontend->comment();
         }
         else {
             echo 'Erreur : aucun identifiant de commentaire envoyé';
@@ -61,7 +64,7 @@ try{
 elseif ($_GET['action'] == 'addComment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                $ctrlfrontend->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
             }
             else {
                 echo 'Erreur : tous les champs ne sont pas remplis !';
@@ -74,7 +77,7 @@ elseif ($_GET['action'] == 'addComment') {
         elseif ($_GET['action'] == 'newComment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             if (!empty($_POST['comment'])) {
-                newComment($_POST['comment'],$_GET['id']);
+                $ctrlfrontend->newComment($_POST['comment'],$_GET['id']);
             }
             else {
                 echo 'Erreur : tous les champs ne sont pas remplis !';
@@ -87,7 +90,7 @@ elseif ($_GET['action'] == 'addComment') {
         elseif ($_GET['action'] == 'editComment'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {
               
-                changeComment($_GET['id']);
+                $ctrlfrontend->changeComment($_GET['id']);
                
               
          
@@ -102,7 +105,8 @@ elseif ($_GET['action'] == 'addComment') {
         
         
 }else {
-    listPosts();
+    
+    $ctrlfrontend->listPosts();
 }
 }
 catch(Exception $e){ // S'il y a eu une erreur, alors...
