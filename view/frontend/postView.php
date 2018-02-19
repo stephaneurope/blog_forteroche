@@ -1,4 +1,4 @@
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $this->title = htmlspecialchars($post['title']) ?>
     <div class="news">
         <h3>
         <?= htmlspecialchars($post['chapter']) ?> :
@@ -8,7 +8,7 @@
         <p>
             <?= nl2br(htmlspecialchars($post['content'])) ?>
                 <br/>
-                <br/><a href="index.php">Retour à la liste des billets</a> </p>
+                <br/><a href="index.php">Retour à la liste des chapitres</a> </p>
     </div>
     <div class="comment">
         <h3>Commentaires</h3></div>
@@ -29,7 +29,8 @@ while ($comment = $comments->fetch())
             <div class="comment">
                 <h3>Laissez un commentaire</h3></div>
             <div class="news">
-                <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+                <form action="index.php?action=addComment&amp;id=
+<?= $post['id']?>" method="post">
                     <div>
                         <label for="author">Auteur</label>
                         <br />

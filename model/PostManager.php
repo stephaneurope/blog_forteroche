@@ -21,7 +21,14 @@ class PostManager extends Manager
 
         return $post;
     }
+public function updatePost($postId,$content)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE posts SET content = ?  WHERE id = ?');
+        $reaffectedLines =$req->execute(array($postId,$content));
+       return $reaffectedLines;
 
+    }
 
 
    

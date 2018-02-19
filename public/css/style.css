@@ -92,7 +92,6 @@ form {
 
 .news a {
     text-decoration: none;
-    color: blue;
     float: right;
     color: #fff;
     font-weight: bold;
@@ -120,7 +119,6 @@ form {
 
 .modif {
     text-decoration: none;
-    color: blue;
     color: #fff;
     font-weight: bold;
 }
@@ -131,12 +129,11 @@ form {
 
 .submit {
     text-decoration: none;
-    color: blue;
     float: right;
     color: #fff;
     font-weight: bold;
     background-color: #202938;
-    padding: 10px;
+    padding: 9px;
     margin-right: 10px;
 }
 
