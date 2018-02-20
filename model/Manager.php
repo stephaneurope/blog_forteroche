@@ -1,5 +1,5 @@
 <?php
-namespace OpenClassrooms\Blog\Model;
+namespace Forteroche\Blog\Model;
 class Manager
 {
     protected function dbConnect()

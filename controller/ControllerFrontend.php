@@ -23,7 +23,7 @@ function texte_decoupe( $texte, $longueur_max, $separateur ) {
     
 function listPosts()
 {
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    $postManager = new \Forteroche\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
     $view = new View('listPostsView');
    $view->generer(array('posts' => $posts));
@@ -32,7 +32,7 @@ function listPosts()
 
 function post()
 {
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    $postManager = new \Forteroche\Blog\Model\PostManager();
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
@@ -43,7 +43,7 @@ function post()
 }
     function board()
 {
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    $postManager = new \Forteroche\Blog\Model\PostManager();
     
     $posts = $postManager->getPosts();
     

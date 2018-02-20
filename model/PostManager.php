@@ -1,5 +1,5 @@
 <?php
-namespace OpenClassrooms\Blog\Model;
+namespace Forteroche\Blog\Model;
 require_once("model/Manager.php"); // Vous n'alliez pas oublier cette ligne ? ;o)
 
 class PostManager extends Manager
@@ -28,6 +28,13 @@ public function updatePost($postId,$content)
         $reaffectedLines =$req->execute(array($postId,$content));
        return $reaffectedLines;
 
+    }
+    public function deletePost()
+    {
+      $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM posts  WHERE id = ?'); 
+        $deleteLines=$req->execute(array($postId));
+        return $deleteLines;
     }
 
 

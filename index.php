@@ -46,6 +46,15 @@ elseif ($_GET['action'] == 'addComment') {
             echo 'Erreur : aucun identifiant de billet envoyé';
         }
     }
+      elseif ($_GET['action'] == 'cleanPost'){
+           if (isset($_GET['id']) && $_GET['id'] > 0) {
+              
+                $ctrlBackend->cleanPost($_GET['id']);
+               
+              
+          } 
+       }
+        
         elseif ($_GET['action'] == 'newComment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             if (!empty($_POST['comment'])) {
@@ -59,6 +68,13 @@ elseif ($_GET['action'] == 'addComment') {
             echo 'Erreur : aucun identifiant de commentaire envoyé';
         }
     }
+           elseif ($_GET['action'] == 'erasePost') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) 
+                $ctrlBackend->erasePost($_GET['id']);
+            
+            
+    }
+        
          elseif ($_GET['action'] == 'modifPost') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             if (!empty($_POST['content'])) {

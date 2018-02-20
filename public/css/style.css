@@ -81,6 +81,19 @@ form {
     padding-left: 30%;
 }
 
+.delete form {
+    background-color: #fff;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-left: 0;
+}
+
+.delete p {
+    padding: 20px;
+    text-align: center;
+}
+
 .news textarea {
     width: 50%;
 }
@@ -144,4 +157,27 @@ form {
     text-align: center;
     background-color: #202938;
     color: #fff;
+}
+
+
+/* ADMIN */
+
+.admin {
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.help-inline {
+    color: red;
+}
+
+.admin a {
+    text-decoration: none;
+    float: right;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }

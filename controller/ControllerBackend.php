@@ -9,7 +9,7 @@ class BackendController{
   
 function addComment($postId, $author, $comment)
 {
-    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     
@@ -18,7 +18,7 @@ function addComment($postId, $author, $comment)
 }
     function changeComment($commentId) 
 { 
-    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $commentManager = new \Forteroche\Blog\Model\CommentManager();
 $comment = $commentManager->getComment($_GET['id']);
     $view = new View('changePostView'); 
     $view->generer(array('comment' => $comment));
@@ -26,7 +26,7 @@ $comment = $commentManager->getComment($_GET['id']);
     
 function newComment($commentId,$comment)
 {
-    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $commentManager = new \Forteroche\Blog\Model\CommentManager();
 
     $reaffectedLines = $commentManager->updateComment($commentId,$comment);
 
@@ -37,7 +37,7 @@ function newComment($commentId,$comment)
     
     function changePost($postId) 
 { 
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    $postManager = new \Forteroche\Blog\Model\PostManager();
     $post = $postManager->getPost($_GET['id']);
     $view = new View('updatePostView'); 
     $view->generer(array('post' => $post));
@@ -45,7 +45,7 @@ function newComment($commentId,$comment)
     
     function modifPost($postId,$content)
 {
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    $postManager = new \Forteroche\Blog\Model\PostManager();
 
     $reaffectedLines = $postManager->updatePost($postId,$content);
 
@@ -53,6 +53,17 @@ function newComment($commentId,$comment)
         header('Location: index.php?action=editPost&id=2');
     
 }
+    function cleanPost($postId){
+     $postManager = new \Forteroche\Blog\Model\PostManager();
+    $post = $postManager->getPost($_GET['id']);
+    $view = new View('deletePostView'); 
+    $view->generer(array('post' => $post));
+        }
+ function erasePost($postId){
+     $postManager = new \Forteroche\Blog\Model\PostManager();
+    $deleteLines = $postManager->deletePost($_GET['id']);
+ header('Location: index.php');
 
 
+}
 }

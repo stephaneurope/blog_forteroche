@@ -1,5 +1,5 @@
 <?php
-namespace OpenClassrooms\Blog\Model;
+namespace Forteroche\Blog\Model;
 require_once("model/Manager.php");
 
 class CommentManager extends Manager
