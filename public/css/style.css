@@ -256,8 +256,7 @@
             margin-left: auto;
             margin-right: auto;
             display: table;
-            width: 70%;
-            height: 100px;
+            width: 100%;
             padding: 200px 0;
             text-align: center;
             color: white;
@@ -271,10 +270,9 @@
         }
         
         .masthead .intro-body {
-            display: table-cell;
-            vertical-align: middle;
-        }
-        
+            margin-left:auto;
+            margin-right: auto;
+}
         .masthead .intro-body .brand-heading {
             font-size: 50px;
         }
