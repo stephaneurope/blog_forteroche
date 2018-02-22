@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Faster+One|Fontdiner+Swanky|Frijole|Henny+Penny|Monoton|Montserrat+Subrayada|Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
 </head>
 <title>
@@ -41,27 +43,13 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">Billet simple pour l'Alaska</a></li>
-                    <li><a href="#portfolio">Accueil</a></li>
-                    <li><a href="#recommandations">Connexion</a></li>
+                    <li><a href="#about" class="billet">Billet simple pour l'Alaska</a></li>
+                    <li><a href="index.php"><i class="fa fa-home"></i>Accueil</a></li>
+                    <li><a href="index.php?action=connect"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Intro Header -->
-    <header class="masthead">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">Jean Forteroche</h1>
-                        <p class="intro-text">Billet simple pour l'Alaska</p>
-                        <a href="#about" class="btn btn-circle js-scroll-trigger"> <i class="fa fa-angle-double-down animated"></i> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
     <!--<div id="container" class="blocImage">
         <div col-md-12><img id="paysage" src="/forteroche/images/landscape.jpg" class="img-responsive" alt="Responsive image">
            
@@ -70,8 +58,8 @@
     <div>
         <?= $content ?>
     </div>
-    <footer id="footer">
-        <p>jeanforteroche</p>
+    <footer id="footer" class="navbar-fixed-bottom">
+        <p>©forteroche</p>
     </footer>
 </body>
 

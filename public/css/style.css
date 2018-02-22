@@ -3,10 +3,11 @@
         
         body {
             width: 100%;
+            background-color: #ECF0F5;
         }
         
         .navbar {
-            background: #202938;
+            background: #3F5060;
             font-size: 12px;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -29,7 +30,7 @@
         
         .navbar-nav li a:hover,
         .navbar-nav li.active a {
-            color: #202938 !important;
+            color: #3F5060 !important;
             background-color: #fff !important;
         }
         
@@ -54,8 +55,19 @@
             text-align: center;
         }
         
+        .navbar i {
+            font-size: 16px;
+        }
+        
+        .billet {
+            text-transform: lowercase;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
         .news h3 {
-            background-color: #202938;
+            background-color: #3F5060;
             color: white;
             font-size: 0.9em;
             margin-bottom: 0px;
@@ -64,31 +76,37 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             font-weight: bold;
+            border: 2px, solid, black;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
         }
         
         .news p {
-            background-color: #CCCCCC;
+            background-color: #fff;
             margin-top: 0px;
             padding-top: 10px;
             padding-bottom: 30px;
             padding-left: 10px;
             padding-right: 10px;
+            border: 2px solid #ccc;
         }
         
         .news form {
-            background-color: #CCCCCC;
+            background-color: #fff;
             margin-top: 0px;
             padding-top: 10px;
             padding-bottom: 30px;
             padding-left: 30%;
+            border: 2px solid #ccc;
         }
         
         .delete form {
-            background-color: #fff;
+            background-color: #FCF8E3;
             text-align: center;
             width: 70%;
             margin: auto;
             padding-left: 0;
+            padding: 10px;
         }
         
         .add form {
@@ -115,6 +133,7 @@
         .news {
             width: 70%;
             margin: auto;
+            margin-bottom: 70px;
         }
         
         .news a {
@@ -122,14 +141,15 @@
             float: right;
             color: #fff;
             font-weight: bold;
-            background-color: #202938;
+            background-color: #3F5060;
             padding: 10px;
             margin-right: 10px;
             margin-bottom: 20px;
+            border-radius: 5px;
         }
         
         .comment h3 {
-            background-color: #202938;
+            background-color: #3F5060;
             color: white;
             font-size: 0.9em;
             margin-bottom: 0px;
@@ -142,12 +162,24 @@
             margin-left: auto;
             margin-right: auto;
             width: 70%;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
         }
         
         .modif {
-            text-decoration: none;
-            color: #fff;
+            background-color: #fff;
             font-weight: bold;
+            width: 70%;
+            margin: auto;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+        
+        .modif a {
+            text-decoration: none;
+            float: right;
+            font-weight: bold;
+            padding: 10px;
         }
         
         .auth {
@@ -159,9 +191,10 @@
             float: right;
             color: #fff;
             font-weight: bold;
-            background-color: #202938;
+            background-color: #3F5060;
             padding: 9px;
             margin-right: 10px;
+            border-radius: 10px;
         }
         
         #footer {
@@ -169,12 +202,13 @@
             padding: 10px;
             margin-top: 20px;
             text-align: center;
-            background-color: #202938;
+            background-color: #3F5060;
             color: #fff;
         }
         /* ADMIN */
         
         .admin {
+            margin-top: 100px;
             background: #fff;
             padding: 50px;
             border-radius: 10px;
@@ -193,6 +227,7 @@
             margin-right: 10px;
             margin-bottom: 20px;
         }
+        /*login*/
         
         #login {
             margin-top: 10%;
@@ -215,22 +250,24 @@
         #login input {
             text-align: center;
         }
+        /*image intro*/
         
         .masthead {
             margin-left: auto;
             margin-right: auto;
             display: table;
             width: 70%;
-            height: auto;
+            height: 100px;
             padding: 200px 0;
             text-align: center;
             color: white;
-            background: url("/forteroche/images/landscape.jpg") no-repeat bottom center scroll;
+            background: url("/forteroche/public/images/landscape.jpg") no-repeat bottom center scroll;
             background-color: black;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
+            font-family: 'Pacifico', cursive;
         }
         
         .masthead .intro-body {
@@ -243,5 +280,10 @@
         }
         
         .masthead .intro-body .intro-text {
-            font-size: 18px;
+            font-size: 25px;
+        }
+        /*delete*/
+        
+        .clear {
+            margin-top: 100px;
         }

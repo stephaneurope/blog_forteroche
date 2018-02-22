@@ -1,4 +1,18 @@
 <?php $this->title = htmlspecialchars($post['title']) ?>
+    <!-- Intro Header -->
+    <header class="masthead">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">Jean Forteroche</h1>
+                        <p class="intro-text">Billet simple pour l'Alaska</p>
+                        <a href="#about" class="btn btn-circle js-scroll-trigger"> <i class="fa fa-angle-double-down animated"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="news">
         <h3>
         <?= htmlspecialchars($post['chapter']) ?> :
@@ -16,9 +30,11 @@
 while ($comment = $comments->fetch())
 {
 ?>
-        <div class="news">
+        <div class="modif">
             <p style='margin-bottom:0;'><strong><?= htmlspecialchars($comment['author']) ?></strong> le
-                <?= $comment['comment_date_fr'] ?><a class="modif" href="index.php?action=editComment&amp;id=<?= $comment['id']?>&amp;postId=<?= $post['id'] ?>"> modifier</a></p>
+                <?= $comment['comment_date_fr'] ?>
+                    <a href="index.php?action=editComment&amp;id=<?= $comment['id']?>&amp;postId=<?= $post['id'] ?>"> <i class="fa fa-flag"></i> signaler</a>
+            </p>
             <p>
                 <?= nl2br(htmlspecialchars($comment['comment']))?>
             </p>

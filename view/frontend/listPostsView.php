@@ -1,6 +1,20 @@
 <?php 
-$ctrlfrontend = new FrontendController;
+$ctrlfrontend = new \Forteroche\Blog\FrontendController;
 $this->title = 'Billet simple pour l\'Alaska' ?>
+    <!-- Intro Header -->
+    <header class="masthead">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">Jean Forteroche</h1>
+                        <p class="intro-text">Billet simple pour l'Alaska</p>
+                        <a href="#about" class="btn btn-circle js-scroll-trigger"> <i class="fa fa-angle-double-down animated"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <?php while ($data = $posts->fetch())
 {
 ?>

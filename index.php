@@ -2,8 +2,8 @@
 require('controller/ControllerFrontend.php');
 require('controller/ControllerBackend.php');
 require_once('view/frontend/view.php'); 
-$ctrlfrontend = new FrontendController;
-$ctrlBackend = new BackendController;
+$ctrlfrontend = new \Forteroche\Blog\FrontendController;
+$ctrlBackend = new \Forteroche\Blog\BackendController;
 try{
     if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {

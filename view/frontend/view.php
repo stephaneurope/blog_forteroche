@@ -1,5 +1,5 @@
 <?php 
-
+namespace Forteroche\Blog;
 class View {
 
   // Nom du fichier associé à la vue
