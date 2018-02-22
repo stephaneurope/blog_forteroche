@@ -43,14 +43,14 @@ function newComment($commentId,$comment)
     $view->generer(array('post' => $post));
 }
     
-    function modifPost($postId,$content)
+    function modifPost($postId,$content,$title,$chapter)
 {
     $postManager = new \Forteroche\Blog\Model\PostManager();
 
-    $reaffectedLines = $postManager->updatePost($postId,$content);
+    $reaffectedLines = $postManager->updatePost($postId,$content,$title,$chapter);
 
    
-        header('Location: index.php?action=editPost&id=2');
+        header('Location: index.php?action=board');
     
 }
     function cleanPost($postId){
@@ -62,8 +62,21 @@ function newComment($commentId,$comment)
  function erasePost($postId){
      $postManager = new \Forteroche\Blog\Model\PostManager();
     $deleteLines = $postManager->deletePost($_GET['id']);
- header('Location: index.php');
+ header('Location: index.php?action=board');
 
 
 }
+    function addPost(){
+   $postManager = new \Forteroche\Blog\Model\PostManager();
+    $post = $postManager;
+    $view = new View('addPostView'); 
+    $view->generer(array('post' => $post));
+        }
+     function connect(){
+   $postManager = new \Forteroche\Blog\Model\PostManager();
+    $post = $postManager;
+    $view = new View('connectView'); 
+    $view->generer(array('post' => $post));
+        }
+    
 }

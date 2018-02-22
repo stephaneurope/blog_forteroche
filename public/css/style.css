@@ -1,183 +1,247 @@
-/* explication*/
-
-
-/*MENU*/
-
-.navbar {
-    background: #202938;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-.navbar li a {
-    color: #fff !important;
-}
-
-.navbar-nav li a:hover,
-.navbar-nav li.active a {
-    color: #202938 !important;
-    background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-    border-style: none;
-}
-
-.icon-bar {
-    background-color: #fff !important;
-}
-
-#paysage {
-    text-align: center;
-    width: 70%;
-    max-height: 450px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1,
-h3 {
-    text-align: center;
-}
-
-.news h3 {
-    background-color: #202938;
-    color: white;
-    font-size: 0.9em;
-    margin-bottom: 0px;
-    padding: 15px;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.news p {
-    background-color: #CCCCCC;
-    margin-top: 0px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-form {
-    background-color: #CCCCCC;
-    margin-top: 0px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    padding-left: 30%;
-}
-
-.delete form {
-    background-color: #fff;
-    text-align: center;
-    width: 70%;
-    margin: auto;
-    padding-left: 0;
-}
-
-.delete p {
-    padding: 20px;
-    text-align: center;
-}
-
-.news textarea {
-    width: 50%;
-}
-
-.news {
-    width: 70%;
-    margin: auto;
-}
-
-.news a {
-    text-decoration: none;
-    float: right;
-    color: #fff;
-    font-weight: bold;
-    background-color: #202938;
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-}
-
-.comment h3 {
-    background-color: #202938;
-    color: white;
-    font-size: 0.9em;
-    margin-bottom: 0px;
-    padding: 15px;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
-.modif {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-.auth {
-    width: 50%;
-}
-
-.submit {
-    text-decoration: none;
-    float: right;
-    color: #fff;
-    font-weight: bold;
-    background-color: #202938;
-    padding: 9px;
-    margin-right: 10px;
-}
-
-#footer {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-    background-color: #202938;
-    color: #fff;
-}
-
-
-/* ADMIN */
-
-.admin {
-    background: #fff;
-    padding: 50px;
-    border-radius: 10px;
-}
-
-.help-inline {
-    color: red;
-}
-
-.admin a {
-    text-decoration: none;
-    float: right;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-}
+        /* explication*/
+        /*MENU*/
+        
+        body {
+            width: 100%;
+        }
+        
+        .navbar {
+            background: #202938;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+        
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+        
+        .navbar li a {
+            color: #fff !important;
+        }
+        
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #202938 !important;
+            background-color: #fff !important;
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-style: none;
+        }
+        
+        .icon-bar {
+            background-color: #fff !important;
+        }
+        
+        #paysage {
+            text-align: center;
+            width: 70%;
+            max-height: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1,
+        h3 {
+            text-align: center;
+        }
+        
+        .news h3 {
+            background-color: #202938;
+            color: white;
+            font-size: 0.9em;
+            margin-bottom: 0px;
+            padding: 15px;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .news p {
+            background-color: #CCCCCC;
+            margin-top: 0px;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .news form {
+            background-color: #CCCCCC;
+            margin-top: 0px;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            padding-left: 30%;
+        }
+        
+        .delete form {
+            background-color: #fff;
+            text-align: center;
+            width: 70%;
+            margin: auto;
+            padding-left: 0;
+        }
+        
+        .add form {
+            background-color: #fff;
+            text-align: center;
+            width: 70%;
+            margin: auto;
+            padding-left: 0;
+        }
+        
+        .btn form-actions {
+            text-align: center;
+        }
+        
+        .delete p {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .news textarea {
+            width: 50%;
+        }
+        
+        .news {
+            width: 70%;
+            margin: auto;
+        }
+        
+        .news a {
+            text-decoration: none;
+            float: right;
+            color: #fff;
+            font-weight: bold;
+            background-color: #202938;
+            padding: 10px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .comment h3 {
+            background-color: #202938;
+            color: white;
+            font-size: 0.9em;
+            margin-bottom: 0px;
+            padding: 15px;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+        
+        .modif {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .auth {
+            width: 50%;
+        }
+        
+        .submit {
+            text-decoration: none;
+            float: right;
+            color: #fff;
+            font-weight: bold;
+            background-color: #202938;
+            padding: 9px;
+            margin-right: 10px;
+        }
+        
+        #footer {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            background-color: #202938;
+            color: #fff;
+        }
+        /* ADMIN */
+        
+        .admin {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+        }
+        
+        .help-inline {
+            color: red;
+        }
+        
+        .admin a {
+            text-decoration: none;
+            float: right;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+        
+        #login {
+            margin-top: 10%;
+            margin-bottom: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 18px #ccc;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .tt {
+            max-width: 500px;
+        }
+        
+        #login form {
+            text-align: center;
+        }
+        
+        #login input {
+            text-align: center;
+        }
+        
+        .masthead {
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            width: 70%;
+            height: auto;
+            padding: 200px 0;
+            text-align: center;
+            color: white;
+            background: url("/forteroche/images/landscape.jpg") no-repeat bottom center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+        .masthead .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        .masthead .intro-body .brand-heading {
+            font-size: 50px;
+        }
+        
+        .masthead .intro-body .intro-text {
+            font-size: 18px;
+        }

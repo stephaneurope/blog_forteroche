@@ -1,7 +1,7 @@
 <div>
     <div class="container admin">
         <div class="row">
-            <h1><strong>Tableau de bord</strong><a href="insert.php" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Ajouter un chapitre</a></h1>
+            <h1><strong>Tableau de bord</strong><a href="index.php?action=addPost" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Ajouter un chapitre</a></h1>
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
