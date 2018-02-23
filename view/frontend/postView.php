@@ -56,6 +56,6 @@ while ($comment = $comments->fetch())
                         <textarea id="comment" name="comment"></textarea>
                     </div>
                     <div>
-                        <input class='submit' type="submit" /> </div>
+                        <input class='submit' type="submit"/> </div>
                 </form>
             </div>

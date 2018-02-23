@@ -14,5 +14,5 @@
             <br />
             <textarea id="comment" name="comment" value=""></textarea>
             <div>
-                <input class="submit" type="Submit" /> </div> <a href="index.php">Annuler</a> </form>
+                <input class="submit" type="Submit"/>valider </div> <a href="index.php">Annuler</a> </form>
     </div>
