@@ -78,5 +78,17 @@ function newComment($commentId,$comment)
     $view = new View('connectView'); 
     $view->generer(array('post' => $post));
         }
+ function commentsView()
+{
+    $postManager = new \Forteroche\Blog\Model\PostManager();
+    $commentManager = new \Forteroche\Blog\Model\CommentManager();
+
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
+    $view = new View('commentsView');
+    
+   $view->generer(array('post' => $post,'comments' => $comments));
+      
+}
     
 }

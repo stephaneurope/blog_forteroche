@@ -31,6 +31,15 @@ try{
             echo 'Erreur : aucun identifiant de commentaire envoyé';
         }
     }
+        elseif ($_GET['action'] == 'commentsView') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+      
+            $ctrlBackend->commentsView();
+        }
+        else {
+            echo 'Erreur : aucun identifiant de billet envoyé';
+        }
+    }
        
         
 elseif ($_GET['action'] == 'addComment') {

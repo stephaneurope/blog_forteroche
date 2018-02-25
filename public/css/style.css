@@ -130,6 +130,8 @@
             width: 50%;
         }
         
+       
+        
         .news {
             width: 70%;
             margin: auto;
@@ -270,9 +272,10 @@
         }
         
         .masthead .intro-body {
-            margin-left:auto;
+            margin-left: auto;
             margin-right: auto;
-}
+        }
+        
         .masthead .intro-body .brand-heading {
             font-size: 50px;
         }

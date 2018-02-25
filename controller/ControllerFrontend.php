@@ -38,6 +38,7 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
     $view = new View('postView');
+    
    $view->generer(array('post' => $post,'comments' => $comments));
       
 }
