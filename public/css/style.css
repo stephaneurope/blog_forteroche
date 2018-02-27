@@ -119,6 +119,16 @@
         
         .btn form-actions {
             text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .glyphicon-thumbs-up {
+            color: green;
+            font-size: 1.4em;
+        }
+        
+        .form-group {
+            margin-top: 10px;
         }
         
         .delete p {
@@ -129,8 +139,6 @@
         .news textarea {
             width: 50%;
         }
-        
-       
         
         .news {
             width: 70%;
@@ -287,4 +295,12 @@
         
         .clear {
             margin-top: 100px;
+        }
+        
+        .signal {
+            background-color: #fff;
+            color: blue;
+            border: none;
+            margin-bottom: 10px;
+            float: right;
         }

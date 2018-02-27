@@ -40,6 +40,32 @@ class CommentManager extends Manager
        return $Lines;
 
     }
+   public function boolean($commentId){
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET moderate = 1 WHERE id = ?');
+         $comment =$req->execute(array($commentId));
+       return $comment;
+    }
+    public function demoderate($commentId){
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET moderate = 0 WHERE id = ?');
+         $comment =$req->execute(array($commentId));
+       return $comment;
+    }
     
+    public function commentModerate($moderate){
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id, author, comment, DATE_FORMAT(creationDate, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE moderate=1');
          
+       return $req;
+    }
+    
+    public function deleteComment($commentId)
+    {
+      $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM comments  WHERE id = ?'); 
+        $deleteComment=$req->execute(array($commentId));
+        return $deleteComment;
+    }
+    
 }

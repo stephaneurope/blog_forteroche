@@ -13,13 +13,11 @@
                     <input type="text" class="form-control" id="title" name="title" placeholder="Titre" value="<?= htmlspecialchars($post['title']) ?>"> <span class="help-inline"></span> </div>
                 <div class="form-group">
                     <label for="description">Contenu:</label>
-                    <p>
-                        <textarea type="textarea" class="form-control" id="content" name="content" value="
+                    <textarea type="textarea" class="form-control" id="content" name="content" value="
            
         ">
-                            <?= nl2br(htmlspecialchars($post['content']))?>
-                        </textarea>
-                    </p><span class="help-inline"></span> </div>
+                        <?= nl2br(htmlspecialchars($post['content']))?>
+                    </textarea> <span class="help-inline"></span> </div>
                 <br>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span> Modifier</button> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a> </div>

@@ -1,7 +1,7 @@
 <div>
     <div class="container admin">
         <div class="row">
-            <h1><strong>Tableau de bord</strong><a href="index.php?action=addPost" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Ajouter un chapitre</a><a href="index.php?action=addPost" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> commentaires signalés</a></h1>
+            <h1><strong>Tableau de bord</strong><a href="index.php?action=addPost" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Ajouter un chapitre</a><a href="index.php?action=commentAction" class="btn btn-warning "><span class="glyphicon glyphicon-thumbs-down"></span> commentaires signalés</a></h1>
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>

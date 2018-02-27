@@ -1,5 +1,6 @@
 <?php 
-$ctrlfrontend = new \Forteroche\Blog\FrontendController;
+
+$manager = new \Forteroche\Blog\Model\Manager;
 $this->title = 'Billet simple pour l\'Alaska' ?>
     <!-- Intro Header -->
     <header class="masthead">
@@ -24,7 +25,7 @@ $this->title = 'Billet simple pour l\'Alaska' ?>
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
             <p>
-                <?= $ctrlfrontend->texte_decoupe(nl2br(htmlspecialchars($data['content'])), 500, '[...]') ?>
+                <?= $manager->texte_decoupe(nl2br(htmlspecialchars($data['content'])), 500, '[...]') ?>
                     <br/>
                     <br/> <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre...</a></em> </p>
         </div>
