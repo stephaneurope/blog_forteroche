@@ -34,9 +34,7 @@ while ($comment = $comments->fetch())
                 <?= $comment['comment_date_fr'] ?>
             </p>
             <form action="index.php?action=moderate&amp;id=<?= htmlspecialchars($comment['id']) ?>" method="post">
-                <div>
-                    <input class='submit' type="submit" value="signaler" /> </div>
-            </form>
+                <input class='signal' type="submit" value='signaler' /><i class="fa fa-flag signal"></i> </form>
             <p>
                 <?= nl2br(htmlspecialchars($comment['comment']))?>
             </p>
@@ -56,9 +54,9 @@ while ($comment = $comments->fetch())
                     <div>
                         <label for="comment">Commentaire</label>
                         <br />
-                        <textarea id="comment" name="comment"></textarea>
+                        <textarea class="mceNoEditor" id="comment" name="comment"></textarea>
                     </div>
                     <div>
-                        <input class='submit' type="submit" /> </div>
+                        <input class='submit' type="submit" value="Valider" /> </div>
                 </form>
             </div>

@@ -1,17 +1,24 @@
 <?php $this->title = 'Editer commentaire' ?>
-    <div class="news">
-        <h2>Editer le commentaire</h2>
-        <form action="index.php?action=newComment&amp;id=
-<?= $comment['id']?>" method="post">
-            <p style='margin-bottom:0;'><strong><?= htmlspecialchars($comment['author']) ?>
+    <div class="container admin add">
+        <div class="row ">
+            <h1><strong>Modifier ce commentaire </strong></h1>
+            <br>
+            <form class="form" role="form" action="index.php?action=newComment&amp;id=
+<?= $comment['id']?>" method="post" enctype="multipart/form-data">
+                <p style='margin-bottom:0;'><strong><?= htmlspecialchars($comment['author']) ?>
         </strong> le
-                <?= $comment['comment_date_fr'] ?>
-            </p>
-            <label for="newComment">Nouveau commentaire</label>
-            <br />
-            <textarea id="comment" name="comment">
-                <?= nl2br(htmlspecialchars($comment['comment']))?>
-            </textarea>
-            <div>
-                <input class="submit" type="Submit" value="valider" /> </div> <a href="index.php?action=board">Annuler</a> </form>
+                    <?= $comment['comment_date_fr'] ?>
+                </p>
+                <br />
+                <div class="form-group">
+                    <label for="description">Contenu:</label>
+                    <textarea id="comment" name="comment">
+                        <?= nl2br(htmlspecialchars($comment['comment']))?>
+                    </textarea><span class="help-inline"></span></div>
+                <br>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span> Valider</button><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
+<?= $comment['id']?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a> </div>
+            </form>
+        </div>
     </div>
