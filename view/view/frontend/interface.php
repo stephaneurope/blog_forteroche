@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <div>
     <div class="container admin">
         <div class="row">

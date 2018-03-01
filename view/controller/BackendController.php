@@ -11,7 +11,7 @@ class BackendController{
     public function changeComment($commentId) 
 { 
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-$comment = $commentManager->getComment($_GET['id']);
+    $comment = $commentManager->getComment($_GET['id']);
     $view = new View('changePostView'); 
     $view->generer(array('comment' => $comment));
 }
@@ -107,13 +107,7 @@ public function eraseComment($commentId){
     $deleteComment = $commentManager->deleteComment($_GET['id']);
  header('Location: index.php?action=board');
 }
-    public function connexion(){
-     $postManager = new \Forteroche\Blog\Model\CommentManager();
-    $resultat = $postManager->connected($_GET['id']);
-     $isPasswordCorrect = password_verify($_POST['pass'], $resultat['pass']);           
-
- header('Location: index.php?action=board');
-}
+    
     
     
 }

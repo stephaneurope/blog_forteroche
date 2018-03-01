@@ -1,10 +1,11 @@
 <?php
 require('controller/FrontendController.php');
 require('controller/BackendController.php');
+require('controller/AdminController.php');
 require_once('view/frontend/view.php'); 
 $ctrlfrontend = new \Forteroche\Blog\FrontendController;
 $ctrlBackend = new \Forteroche\Blog\BackendController;
-$adminManager = new \Forteroche\Blog\AdminController;
+$ctrlAdmin = new \Forteroche\Blog\AdminController;
 try{
     if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {
@@ -113,11 +114,13 @@ elseif ($_GET['action'] == 'addComment') {
         elseif ($_GET['action'] == 'eraseComment'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {
               
-                $ctrlBackend->eraseComment($_GET['id']);
-               
-              
+                $ctrlBackend->eraseComment($_GET['id']);  
           } 
-       } 
+       }
+        elseif ($_GET['action'] == 'connexion'){
+              
+                $ctrlAdmin->connexion($_POST['pseudo'],$_POST['pass']);    
+       }
         
         elseif ($_GET['action'] == 'moderate'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {
