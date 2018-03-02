@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <div class="container admin add">
     <div class="row ">
         <h1><strong>Ajouter un chapitre </strong></h1>

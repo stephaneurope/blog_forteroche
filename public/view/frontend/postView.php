@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <?php $this->title = htmlspecialchars($post['title']) ?>
     <!-- Intro Header -->
     <header class="masthead">

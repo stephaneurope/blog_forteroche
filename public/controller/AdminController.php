@@ -13,11 +13,8 @@ $adminManager = new \Forteroche\Blog\Model\AdminManager();
 $resultat = $adminManager->connected($pseudo,$pass);
  
                 
-$pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);   
-$isPasswordCorrect = password_verify($_POST['pass'], $resultat['pass']);
+$isPasswordCorrect = password_verify($_POST['pass'],$resultat['pass']);
     
-      
-
 if (!$resultat)
 {
     echo 'Mauvais identifiant ou mot de passe !';
@@ -28,7 +25,7 @@ else
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
-        header('Location: index.php?action=board');
+       header('Location: index.php?action=board');
         echo 'Vous êtes connecté !';
     }
     else {
@@ -36,4 +33,17 @@ else
     }
 }
        }
+
+ public function deleteSession() {
+    session_start();
+
+// Suppression des variables de session et de la session
+$_SESSION = array();
+session_destroy();
+
+// Suppression des cookies de connexion automatique
+setcookie('login', '');
+setcookie('pass', '');
+      header('Location: index.php');
+    }
 }

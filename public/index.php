@@ -121,6 +121,10 @@ elseif ($_GET['action'] == 'addComment') {
               
                 $ctrlAdmin->connexion($_POST['pseudo'],$_POST['pass']);    
        }
+        elseif ($_GET['action'] == 'deconnexion'){
+              
+                $ctrlAdmin->deleteSession();    
+       }
         
         elseif ($_GET['action'] == 'moderate'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {

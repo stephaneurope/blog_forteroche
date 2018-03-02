@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <?php $this->title = 'Editer le chapitre' ?>
     <div class="container admin add">
         <div class="row ">

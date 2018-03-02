@@ -1,8 +1,5 @@
-<?php
+<?php 
 session_start();?>
-
-
-    
     <div id="login" class="span3 well well-large offset4">
         <div class="tt">
             <h4>Connexion</h4>

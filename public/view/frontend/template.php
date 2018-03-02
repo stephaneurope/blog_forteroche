@@ -53,19 +53,23 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about" class="billet">Billet simple pour l'Alaska</a></li>
-                    <li><a href="index.php"><i class="fa fa-home"></i>Accueil</a></li>
-                    <li><a href="index.php?action=connect"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</a></li>
-                </ul>
+                <?php if (!$_SESSION) { ?>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#about" class="billet">Billet simple pour l'Alaska</a></li>
+                        <li><a href="index.php"><i class="fa fa-home"></i>Accueil</a></li>
+                        <li><a href="index.php?action=connect"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</a></li>
+                    </ul>
+                    <?php } else { ?>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#about" class="billet">Billet simple pour l'Alaska</a></li>
+                            <li><a href="index.php"><i class="fa fa-home"></i>Accueil</a></li>
+                            <li><a href="index.php?action=board">Board</a></li>
+                            <li><a href="index.php?action=deconnexion"><i class="fa fa-sign-in" aria-hidden="true"></i>Déconnexion</a></li>
+                        </ul>
+                        <?php } ?>
             </div>
         </div>
     </nav>
-    <!--<div id="container" class="blocImage">
-        <div col-md-12><img id="paysage" src="/forteroche/images/landscape.jpg" class="img-responsive" alt="Responsive image">
-           
-        </div>
-    </div>-->
     <div>
         <?= $content ?>
     </div>
