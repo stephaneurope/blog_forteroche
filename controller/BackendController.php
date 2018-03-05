@@ -11,7 +11,7 @@ class BackendController{
     public function changeComment($commentId) 
 { 
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-$comment = $commentManager->getComment($_GET['id']);
+    $comment = $commentManager->getComment($_GET['id']);
     $view = new View('changePostView'); 
     $view->generer(array('comment' => $comment));
 }
@@ -90,13 +90,13 @@ public function newComment($commentId,$comment)
         header('Location: index.php?action=board'); 
     }
     
-    public function commentAction($moderate)
+    public function commentAction()
 {
     
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
 
     
-    $comments = $commentManager->commentModerate($moderate);
+    $comments = $commentManager->commentModerate();
     $view = new View('commentModerateView');
     
    $view->generer(array('comments' => $comments));
@@ -106,8 +106,13 @@ public function eraseComment($commentId){
      $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $deleteComment = $commentManager->deleteComment($_GET['id']);
  header('Location: index.php?action=board');
-
-
 }
+ public function otherPost($postId, $content, $title,$chapter){
+     $postManager = new \Forteroche\Blog\Model\CommentManager();
+    $newLines = $postManager->newPost($postId, $content, $title,$chapter);
+
+}   
+    
+    
     
 }

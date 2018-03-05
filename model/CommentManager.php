@@ -23,11 +23,11 @@ class CommentManager extends Manager
     }
     
 
-    public function postComment($postId, $author, $comment)
+    public function postComment($postId, $author,$comment)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment,creationDate) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, creationDate) VALUES(?, ?, ?, NOW())');
+        $affectedLines = $comments->execute(array($postId,$author, $comment));
 
         return $affectedLines;
     }
@@ -53,7 +53,7 @@ class CommentManager extends Manager
        return $comment;
     }
     
-    public function commentModerate($moderate){
+    public function commentModerate(){
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, author, comment, DATE_FORMAT(creationDate, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE moderate=1');
          

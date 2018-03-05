@@ -1,6 +1,6 @@
 <?php
 namespace Forteroche\Blog\Model;
-require_once("model/Manager.php"); // Vous n'alliez pas oublier cette ligne ? ;o)
+require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
@@ -36,7 +36,16 @@ public function updatePost($postId,$content,$title,$chapter)
         $deleteLines=$req->execute(array($postId));
         return $deleteLines;
     }
+    public function newPost($postId, $content, $title,$chapter)
+    {
+      $db = $this->dbConnect();
+        $posts = $db->prepare('INSERT INTO posts(id, chapter, title, content, creationDate) VALUES(?, ?, ?, ?, NOW())');
+        $newLines = $posts->execute(array($postId, $content, $title,$chapter));
+
+        return $newLines;
+    }
 
 
+    
    
 }

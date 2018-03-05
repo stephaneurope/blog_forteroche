@@ -17,5 +17,7 @@ class Manager
     }
      
     else echo $texte; }
+    
+   
 
 }

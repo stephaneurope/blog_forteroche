@@ -1,9 +1,11 @@
 <?php
 require('controller/FrontendController.php');
 require('controller/BackendController.php');
+require('controller/AdminController.php');
 require_once('view/frontend/view.php'); 
 $ctrlfrontend = new \Forteroche\Blog\FrontendController;
 $ctrlBackend = new \Forteroche\Blog\BackendController;
+$ctrlAdmin = new \Forteroche\Blog\AdminController;
 try{
     if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {
@@ -20,10 +22,8 @@ try{
     }
         elseif ($_GET['action'] == 'commentAction') {
   
-      
-            $ctrlBackend->commentAction('moderate');
-       
-        
+            $ctrlBackend->commentAction();
+  
     }
         elseif ($_GET['action'] == 'reability') {
   
@@ -39,7 +39,7 @@ try{
         elseif ($_GET['action'] == 'comment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             
-            $ctrlBackend->comment();
+            $ctrlBackend->postComment();
         }
         else {
             echo 'Erreur : aucun identifiant de commentaire envoyé';
@@ -57,16 +57,15 @@ try{
        
         
 elseif ($_GET['action'] == 'addComment') {
-        if (isset($_GET['id']) && $_GET['id'] > 0) {
-            if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                 $ctrlfrontend->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+        if (isset($_GET['id']) && $_GET['id'] > 0) { if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                 $ctrlfrontend->addComment($_GET['id'], $_POST['author'],$_POST['comment']);
             }
             else {
                 echo 'Erreur : tous les champs ne sont pas remplis !';
             }
         }
         else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
+            echo 'Erreur : aucun identifiant de chapitre envoyé';
         }
     }
       elseif ($_GET['action'] == 'cleanPost'){
@@ -112,19 +111,31 @@ elseif ($_GET['action'] == 'addComment') {
         elseif ($_GET['action'] == 'eraseComment'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {
               
-                $ctrlBackend->eraseComment($_GET['id']);
-               
-              
+                $ctrlBackend->eraseComment($_GET['id']);  
           } 
-       } 
+       }
+        elseif ($_GET['action'] == 'connexion'){
+              
+                $ctrlAdmin->connexion($_POST['pseudo'],$_POST['pass']);    
+       }
+        elseif ($_GET['action'] == 'deconnexion'){
+              
+                $ctrlAdmin->deleteSession();    
+       }
+        
         elseif ($_GET['action'] == 'moderate'){
-           if (isset($_GET['id']) && $_GET['id'] > 0) {
+            
               
                 $ctrlfrontend->moderate($_GET['id']);
-               
-              
-          } 
+                   
        } 
+         elseif ($_GET['action'] == 'newPost'){
+            
+              
+                $ctrlBackend->otherPost($_GET['id'],$_POST['content'],$_POST['title'],$_POST ['chapter']);
+                   
+       } 
+        
         
          elseif ($_GET['action'] == 'modifPost') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {

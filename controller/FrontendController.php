@@ -15,11 +15,17 @@ class FrontendController{
         header('Location: index.php?action=post&id='. ($_GET['id'])); 
     }   
   
-public function addComment($postId, $author, $comment)
+public function addComment($postId, $author,$comment)
 {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $affectedLines = $commentManager->postComment($postId,$author,$comment);
+     if ($affectedLines == false) {
+         echo(var_dump($affectedLines));
+        echo'Impossible d\'ajouter le commentaire !';
+    }
+    else {
     header('Location: index.php?action=post&id=' . $postId);
+    }
     }
     
 public function listPosts()
@@ -45,12 +51,20 @@ public function post()
 }
     public function board()
 {
-    $postManager = new \Forteroche\Blog\Model\PostManager();
+       
+     
+        $postManager = new \Forteroche\Blog\Model\PostManager();
     
     $posts = $postManager->getPosts();
     
     $view = new View('interface');
    $view->generer(array('posts' => $posts));
-}
+        
+     
+    }
+   
+  
+    
+    
 
     }
