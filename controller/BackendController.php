@@ -107,10 +107,16 @@ public function eraseComment($commentId){
     $deleteComment = $commentManager->deleteComment($_GET['id']);
  header('Location: index.php?action=board');
 }
- public function otherPost($postId, $content, $title,$chapter){
-     $postManager = new \Forteroche\Blog\Model\CommentManager();
-    $newLines = $postManager->newPost($postId, $content, $title,$chapter);
-
+ public function otherPost($chapter,$title,$content){
+     $postManager = new \Forteroche\Blog\Model\PostManager();
+    $newLines = $postManager->newPost($chapter,$title,$content);
+      if ($newLines == false) {
+    echo(var_dump($chapter));
+    
+        echo'Impossible d\'ajouter le commentaire !';
+    }else {
+    header('Location: index.php?action=board');
+    }
 }   
     
     

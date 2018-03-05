@@ -1,5 +1,6 @@
 <?php 
 session_start();?>
+<?php if($_SESSION){ ?>
     <div class="container admin add">
         <div class="row ">
             <br>
@@ -28,3 +29,8 @@ while ($comment = $comments->fetch())
 ?>
         </div>
     </div>
+<?php
+}else{
+    header('Location: index.php');
+}
+?>

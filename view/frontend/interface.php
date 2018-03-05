@@ -15,9 +15,7 @@ session_start();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php while ($data = $posts->fetch())
-{
-?>
+                            <?php while ($data = $posts->fetch()){ ?>
                                 <tr>
                                     <td>
                                         <?= $data['chapter'] ?>
@@ -27,9 +25,7 @@ session_start();
                                     </td>
                                     <td width=50%> <a class="btn btn-info" href="index.php?action=commentsView&id=<?= $data['id']?>"><span class="glyphicon glyphicon-pencil"></span> Commentaires</a> <a class="btn btn-primary" href="index.php?action=editPost&id=<?= $data['id']?>"><span class="glyphicon glyphicon-pencil"></span> Modifier</a> <a class="btn btn-danger" href="index.php?action=cleanPost&id=<?= $data['id']?>"><span class="glyphicon glyphicon-remove"></span> Suprimer</a> </td>
                                 </tr>
-                                <?php
-}
-?>
+                                <?php } ?>
                         </tbody>
                     </table>
                 </div>

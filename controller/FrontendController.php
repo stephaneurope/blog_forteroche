@@ -28,10 +28,11 @@ public function addComment($postId, $author,$comment)
     }
     }
     
-public function listPosts()
+
+    public function listPosts()
 {
     $postManager = new \Forteroche\Blog\Model\PostManager();
-    $posts = $postManager->getPosts();
+    $posts = $postManager->limitGetPosts();
     $view = new View('listPostsView');
    $view->generer(array('posts' => $posts));
     
@@ -51,16 +52,23 @@ public function post()
 }
     public function board()
 {
-       
-     
         $postManager = new \Forteroche\Blog\Model\PostManager();
     
     $posts = $postManager->getPosts();
     
     $view = new View('interface');
    $view->generer(array('posts' => $posts));
-        
-     
+          
+    }
+
+    
+    public function chapterList()
+{
+       
+    $postManager = new \Forteroche\Blog\Model\PostManager();
+    
+    $posts = $postManager->getPosts();
+    
     }
    
   

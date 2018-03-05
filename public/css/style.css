@@ -59,6 +59,12 @@
             font-size: 16px;
         }
         
+        .dropdown-menu {
+            background-color: #3F5060!important;
+            text-align: center;
+            font-size: 10px;
+        }
+        
         .billet {
             text-transform: lowercase;
             font-size: 20px;

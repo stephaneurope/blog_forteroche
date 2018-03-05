@@ -1,23 +1,36 @@
 <?php 
 session_start();?>
-<div class="comment">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h3>Commentaires du <?= htmlspecialchars($post['chapter'])?>:<?= htmlspecialchars($post['title']) ?></h3></div>
-<?php
+    <?php if($_SESSION){ ?>
+        <div class="container admin add">
+            <div class="row ">
+                <br>
+                <h1>Editions des Commentaires </h1>
+                <br>
+                <?php
 while ($comment = $comments->fetch())
 {
 ?>
-    <div class="modif">
-        <p style='margin-bottom:0;'><strong><?= htmlspecialchars($comment['author']) ?></strong> le
-            <?= $comment['comment_date_fr'] ?> <a href="index.php?action=editComment&amp;id=<?= $comment['id']?>&amp;postId=<?= $post['id'] ?>" class="btn btn-success " style="margin-left:10px;"><span class="glyphicon glyphicon-pencil"></span> Modifier</a><a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a> </p>
-        <p>
-            <?= nl2br(htmlspecialchars($comment['comment']))?>
-        </p>
-    </div>
-    <?php
+                    <form class="form" role="form" action="index.php?action=newComment&amp;id=
+<?= $comment['id']?>" method="post" enctype="multipart/form-data">
+                        <input value="<?= htmlspecialchars($comment['author']) ?>"> le
+                        <input value="<?= $comment['comment_date_fr'] ?>"> <a class=" btn btn-success" href="index.php?action=reability&amp;id=<?= htmlspecialchars($comment['id']) ?>"> désignaler </a>
+                        <br/>
+                        <div class="form-group">
+                            <textarea id="comment" name="comment">
+                                <?= nl2br(htmlspecialchars($comment['comment']))?>
+                            </textarea><span class="help-inline"></span></div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span> Modifier</button> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
+<?= $comment['id']?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> </div>
+                        <br>
+                        <br> </form>
+                    <?php
+}
+?>
+            </div>
+        </div>
+        <?php
+}else{
+    header('Location: index.php');
 }
 ?>

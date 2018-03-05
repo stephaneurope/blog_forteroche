@@ -57,6 +57,15 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#about" class="billet">Billet simple pour l'Alaska</a></li>
                         <li><a href="index.php"><i class="fa fa-home"></i>Accueil</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="index.php?action=chapterList" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Chapitres
+        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a action="index.php?action=chapterList" class="dropdown-item" href="#">
+                                    chapitre1
+                                    chapitre2
+                                    chapitre3
+                                </a> </div>
+                        </li>
                         <li><a href="index.php?action=connect"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</a></li>
                     </ul>
                     <?php } else { ?>

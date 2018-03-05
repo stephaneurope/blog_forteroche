@@ -1,5 +1,6 @@
 <?php 
 session_start();?>
+ <?php if($_SESSION){ ?>
 <div class="container delete">
     <div class="row">
         <div class="clear">
@@ -14,3 +15,8 @@ session_start();?>
         </div>
     </div>
 </div>
+<?php
+}else{
+    header('Location: index.php');
+}
+?>

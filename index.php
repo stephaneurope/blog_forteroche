@@ -54,6 +54,9 @@ try{
             echo 'Erreur : aucun identifiant de billet envoyé';
         }
     }
+     elseif ($_GET['action'] == 'chapterList') {
+        $ctrlfrontend->chapterList();
+    }   
        
         
 elseif ($_GET['action'] == 'addComment') {
@@ -68,6 +71,17 @@ elseif ($_GET['action'] == 'addComment') {
             echo 'Erreur : aucun identifiant de chapitre envoyé';
         }
     }
+        elseif ($_GET['action'] == 'otherPost'){
+            
+               if (!empty($_POST['chapter']) && !empty($_POST['title'])) {
+                $ctrlBackend->otherPost($_POST['chapter'],$_POST['title'],$_POST ['content']);
+               }else {
+                echo 'Erreur : tous les champs ne sont pas remplis !';
+            
+        }
+       
+                   
+       } 
       elseif ($_GET['action'] == 'cleanPost'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {
               
@@ -100,6 +114,7 @@ elseif ($_GET['action'] == 'addComment') {
             echo 'Erreur : aucun identifiant de commentaire envoyé';
         }
     }
+          
           elseif ($_GET['action'] == 'erasePost'){
            if (isset($_GET['id']) && $_GET['id'] > 0) {
               
@@ -129,12 +144,7 @@ elseif ($_GET['action'] == 'addComment') {
                 $ctrlfrontend->moderate($_GET['id']);
                    
        } 
-         elseif ($_GET['action'] == 'newPost'){
-            
-              
-                $ctrlBackend->otherPost($_GET['id'],$_POST['content'],$_POST['title'],$_POST ['chapter']);
-                   
-       } 
+        
         
         
          elseif ($_GET['action'] == 'modifPost') {

@@ -4,10 +4,17 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
+     public function limitGetPosts()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate DESC LIMIT 0, 4 ');
+
+        return $req;
+    }
     public function getPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate DESC ');
+        $req = $db->query('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate ');
 
         return $req;
     }
@@ -36,16 +43,15 @@ public function updatePost($postId,$content,$title,$chapter)
         $deleteLines=$req->execute(array($postId));
         return $deleteLines;
     }
-    public function newPost($postId, $content, $title,$chapter)
+    public function newPost($chapter,$title,$content)
     {
       $db = $this->dbConnect();
-        $posts = $db->prepare('INSERT INTO posts(id, chapter, title, content, creationDate) VALUES(?, ?, ?, ?, NOW())');
-        $newLines = $posts->execute(array($postId, $content, $title,$chapter));
-
+        $posts = $db->prepare('INSERT INTO posts(chapter, title, content, creationDate) VALUES(?, ?, ?, NOW())');
+        $newLines = $posts->execute(array($chapter,$title,$content));
         return $newLines;
     }
 
 
-    
+ 
    
 }
