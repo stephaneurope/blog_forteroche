@@ -15,8 +15,15 @@ class Manager
         $texte = substr( $texte, 0, $dernier_espace);
         echo $texte . ' ' . $separateur;
     }
+        
      
     else echo $texte; }
+    
+    public function chapterList() {
+    $postManager = new \Forteroche\Blog\Model\PostManager();
+    $posts = $postManager->getPosts();
+    
+    }
     
    
 

@@ -1,5 +1,7 @@
 <?php 
-session_start();?>
+session_start();
+
+?>
     <?php $this->title = htmlspecialchars($post['title']) ?>
         <!-- Intro Header -->
         <header class="masthead">
@@ -17,9 +19,7 @@ session_start();?>
         <div class="news">
             <h3>
         <?= htmlspecialchars($post['chapter']) ?> :
-        <?= htmlspecialchars($post['title']) ?>
-        <em>le <?= $post['creation_date_fr'] ?></em>
-    </h3>
+            <?= htmlspecialchars($post['title']) ?> <em>le <?= $post['creation_date_fr'] ?></em> </h3>
             <p>
                 <?= nl2br(htmlspecialchars($post['content'])) ?>
                     <br/>
@@ -35,11 +35,17 @@ while ($comment = $comments->fetch())
                 <p style='margin-bottom:0;'><strong><?= htmlspecialchars($comment['author']) ?></strong> le
                     <?= $comment['comment_date_fr'] ?>
                 </p>
-                <form action="index.php?action=moderate&amp;id=<?= htmlspecialchars($comment['id']) ?>" method="post">
-                    <input class='signal' type="submit" value='signaler' /><i class="fa fa-flag signal"></i> </form>
-                <p>
-                    <?= nl2br(htmlspecialchars($comment['comment']))?>
-                </p>
+                <?php if($comment['moderate']== '0') { ?>
+                    <form action="index.php?action=moderate&amp;id=<?= htmlspecialchars($comment['id']) ?>" method="post">
+                        <input href="#" class='signal' type="submit" value='signaler' />
+                    </form>
+                    <?php } else{ ?>
+                        <form action="" method="post">
+                            <input class='signal' type="submit" value='commentaire signalé' style='color:red' /> </form>
+                        <?php } ?>
+                            <p>
+                                <?= nl2br(htmlspecialchars($comment['comment']))?>
+                            </p>
             </div>
             <?php
 }

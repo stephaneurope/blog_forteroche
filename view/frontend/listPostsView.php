@@ -24,7 +24,7 @@ $this->title = 'Billet simple pour l\'Alaska' ?>
                 <h3>
                     <?= htmlspecialchars($data['chapter']) ?> :
             <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
+            <em>le <?= htmlspecialchars($data['creation_date_fr']) ?></em>
         </h3>
                 <p>
                     <?= $manager->texte_decoupe(nl2br(htmlspecialchars($data['content'])), 500, '[...]') ?>

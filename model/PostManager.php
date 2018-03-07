@@ -40,7 +40,7 @@ public function updatePost($postId,$content,$title,$chapter)
     {
       $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM posts  WHERE id = ?'); 
-        $deleteLines=$req->execute(array($postId));
+        $deleteLines= $req->execute(array($postId));
         return $deleteLines;
     }
     public function newPost($chapter,$title,$content)

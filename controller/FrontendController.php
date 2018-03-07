@@ -8,19 +8,20 @@ require_once('model/CommentManager.php');
 
 class FrontendController{
     
- public function moderate($commentId)
+ public function moderate()
 {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $comment = $commentManager->boolean($_GET['id']);
-        header('Location: index.php?action=post&id='. ($_GET['id'])); 
-    }   
+ 
+    } 
+    
   
 public function addComment($postId, $author,$comment)
 {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $affectedLines = $commentManager->postComment($postId,$author,$comment);
      if ($affectedLines == false) {
-         echo(var_dump($affectedLines));
+        
         echo'Impossible d\'ajouter le commentaire !';
     }
     else {
@@ -46,8 +47,8 @@ public function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
     $view = new View('postView');
-    
-   $view->generer(array('post' => $post,'comments' => $comments));
+    $view->generer(array('post' => $post,'comments' => $comments));
+  
       
 }
     public function board()
@@ -62,7 +63,7 @@ public function post()
     }
 
     
-    public function chapterList()
+    public function template($page)
 {
        
     $postManager = new \Forteroche\Blog\Model\PostManager();

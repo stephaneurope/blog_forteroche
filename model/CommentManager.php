@@ -7,7 +7,7 @@ class CommentManager extends Manager
      public function getComments($postId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(creationDate, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY creationDate DESC');
+        $comments = $db->prepare('SELECT id, author, comment,moderate, DATE_FORMAT(creationDate, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY creationDate DESC');
         $comments->execute(array($postId));
 
         return $comments;
@@ -46,6 +46,13 @@ class CommentManager extends Manager
          $comment =$req->execute(array($commentId));
        return $comment;
     }
+    public function thisModerate($moderate){
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT  moderate FROM comments');
+         $comments =$req->execute(array($moderate));
+       return $comments;
+    }
+    
     public function demoderate($commentId){
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE comments SET moderate = 0 WHERE id = ?');

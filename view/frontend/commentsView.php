@@ -1,19 +1,18 @@
-<?php 
-session_start();?>
-    <?php if($_SESSION){ ?>
-        <div class="container admin add">
-            <div class="row ">
-                <br>
-                <h1>Editions des Commentaires </h1>
-                <br>
-                <?php
+<div class="container admin add">
+    <div class="row ">
+        <br>
+        <h1>Editions des Commentaires </h1>
+        <br>
+        <?php
 while ($comment = $comments->fetch())
 {
 ?>
-                    <form class="form" role="form" action="index.php?action=newComment&amp;id=
+            <form class="form" role="form" action="index.php?action=newComment&amp;id=
 <?= $comment['id']?>" method="post" enctype="multipart/form-data">
-                        <input value="<?= htmlspecialchars($comment['author']) ?>"> le
-                        <input value="<?= $comment['comment_date_fr'] ?>"> <a class=" btn btn-success" href="index.php?action=reability&amp;id=<?= htmlspecialchars($comment['id']) ?>"> désignaler </a>
+                <input value="<?= htmlspecialchars($comment['author']) ?>"> le
+                <input value="<?= htmlspecialchars($comment['comment_date_fr']) ?>">
+                <?php if($comment['moderate']== '1') { ?> <a class=" btn btn-success" href="index.php?action=reability&amp;id=<?= htmlspecialchars($comment['id']) ?>"> désignaler </a>
+                    <?php } else{  } ?>
                         <br/>
                         <div class="form-group">
                             <textarea id="comment" name="comment">
@@ -24,13 +23,8 @@ while ($comment = $comments->fetch())
 <?= $comment['id']?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> </div>
                         <br>
                         <br> </form>
-                    <?php
+            <?php
 }
 ?>
-            </div>
-        </div>
-        <?php
-}else{
-    header('Location: index.php');
-}
-?>
+    </div>
+</div>

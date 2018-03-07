@@ -55,15 +55,14 @@ public function newComment($commentId,$comment)
      $postManager = new \Forteroche\Blog\Model\PostManager();
     $deleteLines = $postManager->deletePost($_GET['id']);
  header('Location: index.php?action=board');
-
-
 }
-    public function addPost(){
-   $postManager = new \Forteroche\Blog\Model\PostManager();
-    $post = $postManager;
-    $view = new View('addPostView'); 
-    $view->generer(array('post' => $post));
-        }
+    public function eraseComment($commentId){
+     $commentManager = new \Forteroche\Blog\Model\CommentManager();
+    $deleteComment = $commentManager->deleteComment($_GET['id']);
+ header('Location: index.php?action=board');
+}
+    
+    
      public function connect(){
    $postManager = new \Forteroche\Blog\Model\PostManager();
     $post = $postManager;
@@ -92,31 +91,27 @@ public function newComment($commentId,$comment)
     
     public function commentAction()
 {
-    
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-
-    
     $comments = $commentManager->commentModerate();
     $view = new View('commentModerateView');
-    
-   $view->generer(array('comments' => $comments));
-      
+    $view->generer(array('comments' => $comments));
+     
 }
-public function eraseComment($commentId){
-     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-    $deleteComment = $commentManager->deleteComment($_GET['id']);
- header('Location: index.php?action=board');
-}
+
+ public function addPost(){
+    $postManager = new \Forteroche\Blog\Model\PostManager();
+    $post = $postManager;
+    $view = new View('addPostView'); 
+    $view->generer(array('post' => $post));
+     $view->error();
+        }   
  public function otherPost($chapter,$title,$content){
      $postManager = new \Forteroche\Blog\Model\PostManager();
     $newLines = $postManager->newPost($chapter,$title,$content);
-      if ($newLines == false) {
-    echo(var_dump($chapter));
+     $view = new View('addPostView'); 
     
-        echo'Impossible d\'ajouter le commentaire !';
-    }else {
-    header('Location: index.php?action=board');
-    }
+        $view->error();
+      
 }   
     
     

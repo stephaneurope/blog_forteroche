@@ -1,7 +1,7 @@
 <?php 
 session_start();?>
     <div id="login" class="span3 well well-large offset4">
-        <div class="tt">
+        <div class="centreConnect">
             <h4>Connexion</h4>
             <br>
             <form action="index.php?action=connexion" class="form" method="post">
