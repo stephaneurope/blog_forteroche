@@ -56,6 +56,7 @@ $reponse = $bdd->query('SELECT id,user_id, title,chapter, content, DATE_FORMAT(c
                 selector: "textarea"
                 , selector: "textarea:not(.mceNoEditor)"
                 , theme: 'modern'
+                , entity_encoding: "raw"
                 , plugins: 'lists advlist image imagetools'
             });
         </script>

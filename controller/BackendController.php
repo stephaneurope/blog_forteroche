@@ -103,15 +103,13 @@ public function newComment($commentId,$comment)
     $post = $postManager;
     $view = new View('addPostView'); 
     $view->generer(array('post' => $post));
-     $view->error();
         }   
  public function otherPost($chapter,$title,$content){
      $postManager = new \Forteroche\Blog\Model\PostManager();
     $newLines = $postManager->newPost($chapter,$title,$content);
      $view = new View('addPostView'); 
+     header('Location: index.php?action=board');
     
-        $view->error();
-      
 }   
     
     

@@ -23,10 +23,7 @@ class View {
     // Renvoi de la vue au navigateur
     echo $view;
   }
-   public function error() { 
-   $error1 = "Tous les champs ne sont pas remplis";
-       return $error1;
-   }
+   
 
   // Génère un fichier vue et renvoie le résultat produit
   private function genererFichier($fichier, $donnees) {

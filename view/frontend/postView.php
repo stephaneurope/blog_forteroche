@@ -37,8 +37,7 @@ while ($comment = $comments->fetch())
                 </p>
                 <?php if($comment['moderate']== '0') { ?>
                     <form action="index.php?action=moderate&amp;id=<?= htmlspecialchars($comment['id']) ?>" method="post">
-                        <input href="#" class='signal' type="submit" value='signaler' />
-                    </form>
+                        <input href="#" class='signal' type="submit" value='signaler' /> </form>
                     <?php } else{ ?>
                         <form action="" method="post">
                             <input class='signal' type="submit" value='commentaire signalé' style='color:red' /> </form>
@@ -67,4 +66,9 @@ while ($comment = $comments->fetch())
                         <div>
                             <input class='submit' type="submit" value="Valider" /> </div>
                     </form>
+                    <div>
+                        <?php 
+                         $error;?>
+                        
+                    </div>
                 </div>

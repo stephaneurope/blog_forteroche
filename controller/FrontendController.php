@@ -7,6 +7,7 @@ require_once('model/CommentManager.php');
 
 
 class FrontendController{
+
     
  public function moderate()
 {
@@ -20,13 +21,9 @@ public function addComment($postId, $author,$comment)
 {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $affectedLines = $commentManager->postComment($postId,$author,$comment);
-     if ($affectedLines == false) {
-        
-        echo'Impossible d\'ajouter le commentaire !';
-    }
-    else {
+     
     header('Location: index.php?action=post&id=' . $postId);
-    }
+    
     }
     
 
