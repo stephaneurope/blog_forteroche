@@ -1,12 +1,9 @@
 <?php
+namespace Forteroche\Blog;
 require_once('controller/FrontendController.php'); 
 require_once('controller/BackendController.php');
 require_once('controller/AdminController.php');
-  
-  
-
-
-
+require_once('controller/session.class.php'); 
 class Root {
 
     
@@ -22,7 +19,7 @@ try{
     }
     elseif ($_GET['action'] == 'post') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
-      
+           
            $ctrlfrontend->post($_GET['id']);
         }
         
@@ -121,13 +118,10 @@ elseif ($_GET['action'] == 'commentAction') {
         
 elseif ($_GET['action'] == 'addComment') {
         if (isset($_GET['id']) && $_GET['id'] > 0){ 
-         if (!empty($_POST['author']) && !empty($_POST['comment'])){
+         
                  $ctrlfrontend->addComment($_GET['id'], $_POST['author'],$_POST['comment']);
-            }else{
-        
-       $error ='Tous les champs ne sont pas remplis';
-         header('Location: index.php?action=post&id=' . $postId);    
-    }
+             
+            
             
         }
         
@@ -137,7 +131,7 @@ elseif ($_GET['action'] == 'addComment') {
                if (!empty($_POST['chapter']) && !empty($_POST['title']) && !empty($_POST['content'])) {
                 $ctrlBackend->otherPost($_POST['chapter'],$_POST['title'],$_POST ['content']);
                }else {
-                $error1;
+      
             
                }
        } 
@@ -172,8 +166,10 @@ elseif ($_GET['action'] == 'addComment') {
              if (!empty($_POST['pseudo']) && !empty($_POST['pass'])){
                 $ctrlAdmin->connexion($_POST['pseudo'],$_POST['pass']);} 
                  else {
-               
-                echo 'Erreur : tous les champs ne sont pas remplis !';
+               $Session = new \Forteroche\Blog\Session();
+$Session->setFlash('Tous les champs ne sont pas remplis','');
+     header('Location: index.php?action=connect');
+              
             }
        }
         elseif ($_GET['action'] == 'deconnexion'){

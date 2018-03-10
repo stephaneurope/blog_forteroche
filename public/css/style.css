@@ -280,6 +280,26 @@
             margin-bottom: 10px;
             float: right;
         }
+        /***************Messages Flash***********************/
+        
+        .flash {
+            margin-right: auto;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 0 18px #ccc;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .flashconnect {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 0 18px #ccc;
+            width: 50%;
+            text-align: center;
+        }
         /***************Autres*******************************/
         
         .billet {

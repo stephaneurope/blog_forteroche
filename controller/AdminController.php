@@ -5,6 +5,7 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/AdminManager.php');
  require_once('view/frontend/view.php');
+require_once('controller/session.class.php');
 
 class AdminController{
     
@@ -17,25 +18,35 @@ $isPasswordCorrect = password_verify($_POST['pass'],$resultat['pass']);
     
 if (!$resultat)
 {
-    echo 'Mauvais identifiant ou mot de passe !';
+ $Session = new \Forteroche\Blog\Session();
+$Session->setFlash('Mauvais identifiant ou mot de Passe','');
+     header('Location: index.php?action=board');
 }
 else
 {
     if ($isPasswordCorrect) {
-        session_start();
+        
+         if (!empty($_POST['pseudo']) && !empty($_POST['pass'])){
+            
+        $Session = new \Forteroche\Blog\Session();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
-       header('Location: index.php?action=board');
-        echo 'Vous êtes connecté !';
+        
+        $Session->setFlash('Vous etes connecté','');
+            
+         header('Location: index.php?action=board');  }   
+       
     }
     else {
-        echo 'Mauvais identifiant ou mot de passe !';
+        $Session = new \Forteroche\Blog\Session();
+$Session->setFlash('Mauvais identifiant ou mot de Passe','');
+     header('Location: index.php?action=connect');
     }
 }
        }
 
  public function deleteSession() {
-    session_start();
+   session_start();
 
 // Suppression des variables de session et de la session
 $_SESSION = array();

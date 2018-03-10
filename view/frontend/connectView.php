@@ -1,5 +1,7 @@
 <?php 
-session_start();?>
+require_once('controller/session.class.php'); 
+$Session = new \Forteroche\Blog\Session();
+?>
     <div id="login" class="span3 well well-large offset4">
         <div class="centreConnect">
             <h4>Connexion</h4>
@@ -8,9 +10,12 @@ session_start();?>
                 <input type="text" placeholder="Pseudo" name="pseudo" />
                 <br>
                 <br>
-                <input type="password" placeholder="Password" name="pass" required/>
+                <input type="password" placeholder="Password" name="pass" />
                 <br>
                 <br>
-                <input class="btn btn-success" type="submit" value="Login" required /> </form>
+                <input class="btn btn-success" type="submit" value="Login" /> </form>
+        </div>
+        <div class="flashconnect">
+            <?php $Session->flash();?>
         </div>
     </div>

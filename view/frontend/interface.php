@@ -1,8 +1,14 @@
 <?php 
+require_once('controller/session.class.php'); 
+$Session = new \Forteroche\Blog\Session();
+
 
 ?>
     <div>
         <div class="container admin">
+            <div class="flashconnect">
+                <?php $Session->flash();?>
+            </div>
             <div class="row">
                 <h1><strong>Tableau de bord</strong><a href="index.php?action=addPost" class="btn btn-success btn-lg pad"><span class="glyphicon glyphicon-plus"></span> Ajout chapitre</a><a href="index.php?action=commentAction" class="btn btn-warning pad"><span class="glyphicon glyphicon-thumbs-down"></span> signalement</a></h1>
                 <table class="table table-striped table-bordered">

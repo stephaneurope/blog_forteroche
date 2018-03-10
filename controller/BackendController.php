@@ -4,6 +4,7 @@ namespace Forteroche\Blog;
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
  require_once('view/frontend/view.php');
+require_once('controller/session.class.php');
 
 class BackendController{
   
@@ -68,6 +69,7 @@ public function newComment($commentId,$comment)
     $post = $postManager;
     $view = new View('connectView'); 
     $view->generer(array('post' => $post));
+         
         }
  public function commentsView()
 {

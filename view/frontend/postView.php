@@ -1,5 +1,8 @@
 <?php 
-session_start();
+
+require_once('controller/session.class.php');
+$Session = new \Forteroche\Blog\Session();
+
 
 ?>
     <?php $this->title = htmlspecialchars($post['title']) ?>
@@ -65,10 +68,8 @@ while ($comment = $comments->fetch())
                         </div>
                         <div>
                             <input class='submit' type="submit" value="Valider" /> </div>
+                        <div class="flash">
+                            <?php $Session->flash();?>
+                        </div>
                     </form>
-                    <div>
-                        <?php 
-                         $error;?>
-                        
-                    </div>
                 </div>

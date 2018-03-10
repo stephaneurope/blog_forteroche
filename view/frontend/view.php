@@ -20,6 +20,7 @@ class View {
     // Génération du gabarit commun utilisant la partie spécifique
     $view = $this->genererFichier('view/frontend/template.php',
       array('title' => $this->title, 'content' => $content));
+     
     // Renvoi de la vue au navigateur
     echo $view;
   }
