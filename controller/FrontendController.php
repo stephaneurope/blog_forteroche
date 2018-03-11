@@ -53,8 +53,9 @@ public function post()
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
+    $chapters = $postManager->getPosts(); 
     $view = new View('postView');
-    $view->generer(array('post' => $post,'comments' => $comments));
+    $view->generer(['post' => $post,'comments' => $comments,'chapters'=>$chapters]);
  
   
       
@@ -64,23 +65,14 @@ public function post()
         $postManager = new \Forteroche\Blog\Model\PostManager();
     
     $posts = $postManager->getPosts();
-    
+
     $view = new View('interface');
-   $view->generer(array('posts' => $posts));
+   $view->generer(['posts' => $posts]);
           
     }
 
     
-    public function template($page)
-{
-       
-    $postManager = new \Forteroche\Blog\Model\PostManager();
-    
-    $posts = $postManager->getPosts();
-    
-    }
    
-  
     
     
 

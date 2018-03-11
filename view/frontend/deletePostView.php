@@ -1,3 +1,4 @@
+<?php  include "menu.php"?>
 <div class="container delete">
     <div class="row">
         <div class="clear">

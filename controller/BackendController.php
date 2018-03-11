@@ -67,8 +67,9 @@ public function newComment($commentId,$comment)
      public function connect(){
    $postManager = new \Forteroche\Blog\Model\PostManager();
     $post = $postManager;
+   $chapters = $postManager->getPosts();  
     $view = new View('connectView'); 
-    $view->generer(array('post' => $post));
+    $view->generer(['post' => $post,'chapters'=>$chapters]);
          
         }
  public function commentsView()
