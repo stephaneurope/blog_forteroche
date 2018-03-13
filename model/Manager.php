@@ -19,11 +19,7 @@ class Manager
      
     else echo $texte; }
     
-    public function chapterList() {
-    $postManager = new \Forteroche\Blog\Model\PostManager();
-    $posts = $postManager->getPosts();
     
-    }
     
    
 

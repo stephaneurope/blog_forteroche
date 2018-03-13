@@ -40,7 +40,8 @@ while ($comment = $comments->fetch())
                         <?= $comment['comment_date_fr'] ?>
                     </p>
                     <?php if($comment['moderate']== '0') { ?>
-                        <form action="index.php?action=moderate&amp;id=<?= htmlspecialchars($comment['id']) ?>" method="post">
+                        <form action="index.php?action=moderate&amp;id=
+<?= htmlspecialchars($comment['id']) ?>" method="post">
                             <input href="#" class='signal' type="submit" value='signaler' /> </form>
                         <?php } else{ ?>
                             <form action="" method="post">

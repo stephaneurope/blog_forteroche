@@ -1,8 +1,9 @@
 <?php 
-session_start();?>
+session_start();
+$manager = new \Forteroche\Blog\Model\Manager;?>
     <?php 
 
-$manager = new \Forteroche\Blog\Model\Manager;
+
 $this->title = 'Billet simple pour l\'Alaska' ?>
         <?php  include "menu.php"?>
             <!-- Intro Header -->
@@ -28,7 +29,7 @@ $this->title = 'Billet simple pour l\'Alaska' ?>
             <em>le <?= htmlspecialchars($data['creation_date_fr']) ?></em>
         </h3>
                     <div class='post'>
-                        <?= $manager->texte_decoupe($data['content'], 500, '[...]') ?>
+                        <?= $manager->texte_decoupe(nl2br(htmlspecialchars($data['content'])), 500, '[...]') ?>
                             <br/>
                             <br/> <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre...</a></em> </div>
                 </div>

@@ -15,6 +15,8 @@ class BackendController{
     $comment = $commentManager->getComment($_GET['id']);
     $view = new View('changePostView'); 
     $view->generer(array('comment' => $comment));
+        header('Location: index.php?action=commentsView&id='.$commentId);
+  
 }
     
 public function newComment($commentId,$comment)
@@ -24,7 +26,7 @@ public function newComment($commentId,$comment)
     $reaffectedLines = $commentManager->updateComment($commentId,$comment);
 
    
-        header('Location: index.php?action=editComment&id=' . $comment . '&postId='. $postId);
+       
     
 }
     

@@ -3,6 +3,7 @@ namespace Forteroche\Blog;
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/Manager.php');
  require_once('view/frontend/view.php');
 require('controller/session.class.php');
 
@@ -10,25 +11,32 @@ require('controller/session.class.php');
 class FrontendController{
 
     
- public function moderate()
+ public function moderate($commentId,$postId)
 {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-    $comment = $commentManager->boolean($_GET['id']);
- header('Location: index.php?action=post&id=' . $postId);
+    $comment = $commentManager->boolean($commentId);
+     $postManager = new \Forteroche\Blog\Model\PostManager();
+      $post = $postManager->getPost($_GET['id']);  
+    
+   
+     
+    header('Location: index.php?action=post&id='. $postId);
+
     } 
     
   
 public function addComment($postId, $author,$comment)
 {
+    if (!empty($_POST['author']) && !empty($_POST['comment'])){
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $affectedLines = $commentManager->postComment($postId,$author,$comment);
     $Session = new \Forteroche\Blog\Session();
-   if (!empty($_POST['author']) && !empty($_POST['comment'])){
+   
     $Session->setFlash('Votre commentaire a bien été ajouté');
     header('Location: index.php?action=post&id=' . $postId);}else{
-             
+              $Session = new \Forteroche\Blog\Session();
              $Session->setFlash('Vous n\'avez pas rempli tous les champs',''); 
-            header('Location: index.php?action=post&id=' . $postId);
+            header('Location: index.php?action=post&id='. $postId);
          }
    
   
@@ -39,8 +47,11 @@ public function addComment($postId, $author,$comment)
     public function listPosts()
 {
     $postManager = new \Forteroche\Blog\Model\PostManager();
+        $manager = new \Forteroche\Blog\Model\Manager;
     $posts = $postManager->limitGetPosts();
-     $chapters = $postManager->getPosts();   
+     $chapters = $postManager->getPosts(); 
+        
+       
     $view = new View('listPostsView');
    $view->generer(['posts' => $posts,'chapters'=>$chapters]);
     

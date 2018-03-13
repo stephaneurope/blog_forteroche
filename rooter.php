@@ -1,5 +1,6 @@
 <?php
 namespace Forteroche\Blog;
+
 require_once('controller/FrontendController.php'); 
 require_once('controller/BackendController.php');
 require_once('controller/AdminController.php');
@@ -46,8 +47,9 @@ try{
              
     
 elseif ($_GET['action'] == 'commentAction') {
-              session_start();
-              if($_SESSION){
+             require_once('controller/FrontendController.php'); 
+          session_start();    
+    if($_SESSION){
   
             $ctrlBackend->commentAction();}
                   else{
@@ -117,13 +119,12 @@ elseif ($_GET['action'] == 'commentAction') {
        
         
 elseif ($_GET['action'] == 'addComment') {
-        if (isset($_GET['id']) && $_GET['id'] > 0){ 
+        if (isset($_GET['id']) && $_GET['id'] > 0){
+    
          
                  $ctrlfrontend->addComment($_GET['id'], $_POST['author'],$_POST['comment']);
-             
+             }
             
-            
-        }
         
     }
         elseif ($_GET['action'] == 'otherPost'){
@@ -140,6 +141,7 @@ elseif ($_GET['action'] == 'addComment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             if (!empty($_POST['comment'])) {
                 $ctrlBackend->newComment($_POST['comment'],$_GET['id']);
+                 header('Location: index.php?action=commentsView&id='. $postId);
             }
             else {
                 echo 'Erreur : tous les champs ne sont pas remplis !';
@@ -180,8 +182,8 @@ $Session->setFlash('Tous les champs ne sont pas remplis','');
         elseif ($_GET['action'] == 'moderate'){
             
               if (isset($_GET['id']) && $_GET['id'] > 0) {
-                $ctrlfrontend->moderate($_GET['id']);
-              header('Location: index.php?action=post&id=' . $postId);
+              $ctrlfrontend->moderate($_GET['id'],$postId);
+           
               }
            
                    

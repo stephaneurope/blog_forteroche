@@ -2,8 +2,12 @@
 namespace Forteroche\Blog;
 class Session{
 public function __construct(){
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+    //There is no active session
+    session_start();
+}
 
-session_start();
 }
     
     public function setFlash($message,$type){
