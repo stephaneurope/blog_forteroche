@@ -1,390 +1,395 @@
-        /**************General****************/
-        
-        body {
-            width: 100%;
-            background-color: #ECF0F5;
-        }
-        
-        h1,
-        h3 {
-            text-align: center;
-        }
-        /****************MENU*****************/
-        
-        .navbar {
-            background: #3F5060;
-            font-size: 12px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        
-        .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            vertical-align: top;
-        }
-        
-        .navbar .navbar-collapse {
-            text-align: center;
-        }
-        
-        .navbar li a {
-            color: #fff !important;
-        }
-        
-        .navbar-nav li a:hover,
-        .navbar-nav li.active a {
-            color: #3F5060 !important;
-            background-color: #fff !important;
-        }
-        
-        .navbar-default .navbar-toggle {
-            border-style: none;
-        }
-        
-        .icon-bar {
-            background-color: #fff !important;
-        }
-        
-        .navbar i {
-            font-size: 16px;
-        }
-        
-        .dropdown-menu {
-            background-color: #3F5060!important;
-            text-align: center;
-            font-size: 10px;
-        }
-        /************Photo Paysage******************/
-        
-        #paysage {
-            text-align: center;
-            width: 70%;
-            max-height: 450px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        /*************login*********************/
-        
-        #login {
-            margin-top: 50vh;
-            /* poussé de la moitié de hauteur de viewport */
-            transform: translateY(-50%);
-            /* tiré de la moitié de sa propre hauteur */
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 0 18px #ccc;
-            max-width: 500px;
-            text-align: center;
-        }
-        
-        #login form {
-            text-align: center;
-        }
-        
-        #login input {
-            text-align: center;
-        }
-        /*********************écriture sur immage**********************/
-        
-        .masthead {
-            margin-left: auto;
-            margin-right: auto;
-            display: table;
-            width: 100%;
-            padding: 200px 0;
-            text-align: center;
-            color: white;
-            background: url("/forteroche/public/images/landscape.jpg") no-repeat bottom center scroll;
-            background-color: black;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            font-family: 'Pacifico', cursive;
-        }
-        
-        .masthead .intro-body {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .masthead .intro-body .brand-heading {
-            font-size: 50px;
-        }
-        
-        .masthead .intro-body .intro-text {
-            font-size: 25px;
-        }
-        /********************** ADMIN ****************************/
-        
-        .admin {
-            margin-top: 100px;
-            background: #fff;
-            padding: 50px;
-            border-radius: 10px;
-        }
-        
-        .help-inline {
-            color: red;
-        }
-        
-        .admin a {
-            text-decoration: none;
-            float: right;
-            color: #fff;
-            font-weight: bold;
-            padding: 10px;
-            margin-right: 10px;
-            margin-bottom: 20px;
-        }
-        /**********************delete************************/
-        
-        .clear {
-            margin-top: 100px;
-        }
-        
-        .delete p {
-            padding: 20px;
-            text-align: center;
-        }
-        /********************FORMS************************/
-        
-        .news form {
-            background-color: #fff;
-            margin-top: 0px;
-            padding-top: 10px;
-            padding-bottom: 30px;
-            padding-left: 30%;
-            border: 2px solid #ccc;
-        }
-        
-        .delete form {
-            background-color: #FCF8E3;
-            text-align: center;
-            width: 70%;
-            margin: auto;
-            padding-left: 0;
-            padding: 10px;
-        }
-        
-        .add form {
-            background-color: #fff;
-            text-align: center;
-            width: 70%;
-            margin: auto;
-            padding-left: 0;
-        }
-        
-        .form-group {
-            margin-top: 10px;
-        }
-        
-        .submit {
-            text-decoration: none;
-            float: right;
-            color: #fff;
-            font-weight: bold;
-            background-color: #3F5060;
-            padding: 9px;
-            margin-right: 10px;
-            border-radius: 10px;
-        }
-        /***************NEWS*******************/
-        
-        .news h3 {
-            background-color: #3F5060;
-            color: white;
-            font-size: 0.9em;
-            margin-bottom: 0px;
-            padding: 15px;
-            font-size: 12px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-            border: 2px, solid, black;
-            border-top-right-radius: 5px;
-            border-top-left-radius: 5px;
-        }
-        
-        .post {
-            background-color: #fff;
-            margin-top: 0px;
-            padding-top: 10px;
-            padding-bottom: 30px;
-            padding-left: 10px;
-            padding-right: 10px;
-            border: 2px solid #ccc;
-        }
-        
-        .news textarea {
-            width: 50%;
-        }
-        
-        .news {
-            width: 70%;
-            margin: auto;
-            margin-bottom: 70px;
-        }
-        
-        .news a {
-            text-decoration: none;
-            float: right;
-            color: #fff;
-            font-weight: bold;
-            background-color: #3F5060;
-            padding: 10px;
-            margin-right: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        /******************BTN******************/
-        
-        .btn form-actions {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        /****************MODIF************************/
-        
-        .modif {
-            background-color: #fff;
-            font-weight: bold;
-            width: 70%;
-            margin: auto;
-            border: 2px solid #ccc;
-            padding: 10px;
-        }
-        
-        .modif a {
-            text-decoration: none;
-            float: right;
-            font-weight: bold;
-            padding: 10px;
-        }
-        /*******************Icone*******************/
-        
-        .glyphicon-thumbs-up {
-            color: green;
-            font-size: 1.4em;
-        }
-        
-        .auth {
-            width: 50%;
-        }
-        
-        .signal {
-            background-color: #fff;
-            color: blue;
-            border: none;
-            margin-bottom: 10px;
-            float: right;
-        }
-        /***************Messages Flash***********************/
-        
-        .flash {
-            margin-right: auto;
-            margin-top: 10px;
-            font-weight: bold;
-            box-shadow: 0 0 18px #ccc;
-            width: 50%;
-            text-align: center;
-        }
-        
-        .flashconnect {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10px;
-            font-weight: bold;
-            box-shadow: 0 0 18px #ccc;
-            width: 50%;
-            text-align: center;
-        }
-        /***************Autres*******************************/
-        
-        .billet {
-            text-transform: lowercase;
-            font-size: 20px;
-            font-weight: bold;
-            font-style: italic;
-        }
-        
-        .comment h3 {
-            background-color: #3F5060;
-            color: white;
-            font-size: 0.9em;
-            margin-bottom: 0px;
-            padding: 15px;
-            font-size: 12px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 70%;
-            border-top-right-radius: 5px;
-            border-top-left-radius: 5px;
-        }
-        /**************Footer**************/
-        
-        #footer {
-            width: 100%;
-            padding: 10px;
-            margin-top: 20px;
-            text-align: center;
-            background-color: #3F5060;
-            color: #fff;
-        }
-        /**********************************************************/
-        /**********************************************************/
-        /*****************MEDIAQUERIES*****************************/
-        
-        @media screen and (max-width: 768px) {
-            .admin {
-                margin-top: 40px;
-                background: #fff;
-                padding: 50px;
-                border-radius: 10px;
-            }
-            .help-inline {
-                color: red;
-            }
-            .admin a {
-                text-decoration: none;
-                float: right;
-                color: #fff;
-                font-weight: bold;
-                padding: 5px;
-                margin-right: 10px;
-                margin-bottom: 20px;
-                font-size: 12px;
-                width: 130px;
-            }
-            .pad {
-                margin-top: 5px;
-            }
-            .clear {
-                margin-top: 50vh;
-                /* poussé de la moitié de hauteur de viewport */
-                transform: translateY(-50%);
-                /* tiré de la moitié de sa propre hauteur */
-            }
-            .masthead {
-                margin-left: auto;
-                margin-right: auto;
-                display: table;
-                width: 100%;
-                height: 200px;
-                padding: 200px 0;
-                text-align: center;
-                color: white;
-                background: url("/forteroche/public/images/landscape.jpg") no-repeat bottom center scroll;
-                background-color: black;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                font-family: 'Pacifico', cursive;
-            }
-        }
+                /**************General****************/
+                
+                body {
+                    width: 100%;
+                    background-color: #ECF0F5;
+                }
+                
+                h1,
+                h3 {
+                    text-align: center;
+                }
+                /****************MENU*****************/
+                
+                .navbar {
+                    background: #003865;
+                    font-size: 12px;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                
+                .navbar .navbar-nav {
+                    display: inline-block;
+                    float: none;
+                    vertical-align: top;
+                }
+                
+                .navbar .navbar-collapse {
+                    text-align: center;
+                }
+                
+                .navbar li a {
+                    color: #fff !important;
+                }
+                
+                .navbar-nav li a:hover,
+                .navbar-nav li.active a {
+                    color: #003865 !important;
+                    background-color: #fff !important;
+                }
+                
+                .navbar-default .navbar-toggle {
+                    border-style: none;
+                }
+                
+                .icon-bar {
+                    background-color: #fff !important;
+                }
+                
+                .navbar i {
+                    font-size: 16px;
+                }
+                
+                .dropdown-menu {
+                    background-color: #003865 !important;
+                    text-align: center;
+                    font-size: 10px;
+                }
+                /************Photo Paysage******************/
+                
+                #paysage {
+                    text-align: center;
+                    width: 70%;
+                    max-height: 450px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                /*************login*********************/
+                
+                #login {
+                    margin-top: 50vh;
+                    /* poussé de la moitié de hauteur de viewport */
+                    transform: translateY(-50%);
+                    /* tiré de la moitié de sa propre hauteur */
+                    margin-left: auto;
+                    margin-right: auto;
+                    box-shadow: 0 0 18px #ccc;
+                    max-width: 500px;
+                    text-align: center;
+                }
+                
+                #login form {
+                    text-align: center;
+                }
+                
+                #login input {
+                    text-align: center;
+                }
+                /*********************écriture sur immage**********************/
+                
+                .masthead {
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: table;
+                    width: 100%;
+                    padding: 200px 0;
+                    text-align: center;
+                    color: white;
+                    background: url("/forteroche/public/images/landscape.jpg") no-repeat bottom center scroll;
+                    background-color: black;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                    font-family: 'Pacifico', cursive;
+                }
+                
+                .masthead .intro-body {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                .masthead .intro-body .brand-heading {
+                    font-size: 50px;
+                }
+                
+                .masthead .intro-body .intro-text {
+                    font-size: 25px;
+                }
+                /********************** ADMIN ****************************/
+                
+                .admin {
+                    margin-top: 100px;
+                    background: #fff;
+                    padding: 50px;
+                    border-radius: 10px;
+                }
+                
+                .help-inline {
+                    color: red;
+                }
+                
+                .admin a {
+                    text-decoration: none;
+                    float: right;
+                    color: #fff;
+                    font-weight: bold;
+                    padding: 10px;
+                    margin-right: 10px;
+                    margin-bottom: 20px;
+                }
+                /**********************delete************************/
+                
+                .clear {
+                    margin-top: 100px;
+                }
+                
+                .delete p {
+                    padding: 20px;
+                    text-align: center;
+                }
+                /********************FORMS************************/
+                
+                .news form {
+                    background-color: #fff;
+                    margin-top: 0px;
+                    padding-top: 10px;
+                    padding-bottom: 15px;
+                    padding-left: 30%;
+                    border: 2px solid #ccc;
+                }
+                
+                .delete form {
+                    background-color: #FCF8E3;
+                    text-align: center;
+                    width: 70%;
+                    margin: auto;
+                    padding-left: 0;
+                    padding: 10px;
+                }
+                
+                .add form {
+                    background-color: #fff;
+                    text-align: center;
+                    width: 70%;
+                    margin: auto;
+                    padding-left: 0;
+                }
+                
+                .form-group {
+                    margin-top: 10px;
+                }
+                
+                .submit {
+                    box-shadow: 0.2em 0.2em #00629b;
+                    text-decoration: none;
+                    float: right;
+                    color: #fff;
+                    font-weight: bold;
+                    background-color: #00a6d6;
+                    padding: 9px;
+                    margin-right: 10px;
+                    border-radius: 10px;
+                }
+                /***************NEWS*******************/
+                
+                .news h3 {
+                    box-shadow: inset 0.9em 0 #00a6d6;
+                    background-color: #00629b;
+                    color: white;
+                    font-size: 0.9em;
+                    margin-bottom: 0px;
+                    padding: 15px;
+                    font-size: 12px;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    border: 2px, solid, black;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                }
+                
+                .post {
+                    background-color: #fff;
+                    margin-top: 0px;
+                    padding-top: 10px;
+                    font-size: 16px;
+                    padding-bottom: 20px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    border: 2px solid #ccc;
+                }
+                
+                .news textarea {
+                    width: 50%;
+                }
+                
+                .news {
+                    width: 70%;
+                    margin: auto;
+                    margin-bottom: 70px;
+                }
+                
+                .news a {
+                    box-shadow: 0.2em 0.2em #00629b;
+                    text-decoration: none;
+                    float: right;
+                    color: #fff;
+                    font-weight: bold;
+                    background-color: #00a6d6;
+                    padding: 10px;
+                    margin-right: 10px;
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                }
+                /******************BTN******************/
+                
+                .btn form-actions {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                /****************MODIF************************/
+                
+                .modif {
+                    background-color: #fff;
+                    font-weight: bold;
+                    width: 70%;
+                    margin: auto;
+                    border: 2px solid #ccc;
+                    padding: 10px;
+                }
+                
+                .modif a {
+                    text-decoration: none;
+                    float: right;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+                /*******************Icone*******************/
+                
+                .glyphicon-thumbs-up {
+                    color: green;
+                    font-size: 1.4em;
+                }
+                
+                .auth {
+                    width: 50%;
+                }
+                
+                .signal {
+                    background-color: #fff;
+                    color: blue;
+                    border: none;
+                    margin-bottom: 10px;
+                    float: right;
+                }
+                /***************Messages Flash***********************/
+                
+                .flash {
+                    margin-right: auto;
+                    margin-top: 10px;
+                    font-weight: bold;
+                    box-shadow: 0 0 18px #ccc;
+                    width: 50%;
+                    text-align: center;
+                }
+                
+                .flashconnect {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10px;
+                    font-weight: bold;
+                    box-shadow: 0 0 18px #ccc;
+                    width: 50%;
+                    text-align: center;
+                }
+                /***************Autres*******************************/
+                
+                .billet {
+                    text-transform: lowercase;
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-style: italic;
+                }
+                
+                .comment h3 {
+                    box-shadow: inset 0.9em 0 #00a6d6;
+                    background-color: #00629b;
+                    color: white;
+                    font-size: 0.9em;
+                    margin-bottom: 0px;
+                    padding: 15px;
+                    font-size: 12px;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-top: 20px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 70%;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                }
+                /**************Footer**************/
+                
+                #footer {
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: 20px;
+                    text-align: center;
+                    background-color: #003865;
+                    color: #fff;
+                }
+                /**********************************************************/
+                /**********************************************************/
+                /*****************MEDIAQUERIES*****************************/
+                
+                @media screen and (max-width: 768px) {
+                    .admin {
+                        margin-top: 40px;
+                        background: #fff;
+                        padding: 50px;
+                        border-radius: 10px;
+                    }
+                    .help-inline {
+                        color: red;
+                    }
+                    .admin a {
+                        text-decoration: none;
+                        float: right;
+                        color: #fff;
+                        font-weight: bold;
+                        padding: 5px;
+                        margin-right: 10px;
+                        margin-bottom: 20px;
+                        font-size: 12px;
+                        width: 130px;
+                    }
+                    .pad {
+                        margin-top: 5px;
+                    }
+                    .clear {
+                        margin-top: 50vh;
+                        /* poussé de la moitié de hauteur de viewport */
+                        transform: translateY(-50%);
+                        /* tiré de la moitié de sa propre hauteur */
+                    }
+                    .masthead {
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: table;
+                        width: 100%;
+                        height: 200px;
+                        padding: 200px 0;
+                        text-align: center;
+                        color: white;
+                        background: url("/forteroche/public/images/landscape.jpg") no-repeat bottom center scroll;
+                        background-color: black;
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+                        font-family: 'Pacifico', cursive;
+                    }
+                }

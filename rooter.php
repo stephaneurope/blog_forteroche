@@ -182,7 +182,9 @@ $Session->setFlash('Tous les champs ne sont pas remplis','');
         elseif ($_GET['action'] == 'moderate'){
             
               if (isset($_GET['id']) && $_GET['id'] > 0) {
-              $ctrlfrontend->moderate($_GET['id'],$postId);
+          
+              $ctrlfrontend->moderate($_GET['id']);
+              
            
               }
            

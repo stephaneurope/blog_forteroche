@@ -11,15 +11,10 @@ require('controller/session.class.php');
 class FrontendController{
 
     
- public function moderate($commentId,$postId)
+ public function moderate($commentId)
 {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $comment = $commentManager->boolean($commentId);
-     $postManager = new \Forteroche\Blog\Model\PostManager();
-      $post = $postManager->getPost($_GET['id']);  
-    
-   
-     
     header('Location: index.php?action=post&id='. $postId);
 
     } 
@@ -67,8 +62,6 @@ public function post()
     $chapters = $postManager->getPosts(); 
     $view = new View('postView');
     $view->generer(['post' => $post,'comments' => $comments,'chapters'=>$chapters]);
- 
-  
       
 }
     public function board()

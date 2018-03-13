@@ -1,5 +1,4 @@
 <?php  include "menu.php"?>
-
     <div class="container admin add">
         <div class="row ">
             <br>
@@ -18,10 +17,10 @@ while ($comment = $comments->fetch())
                             <br/>
                             <div class="form-group">
                                 <textarea id="comment" name="comment">
-                                    <?= nl2br(htmlspecialchars($comment['comment']))?>
+                                    <?= $comment['comment']?>
                                 </textarea><span class="help-inline"></span></div>
                             <div class="form-actions">
-                                <input type="submit" class="btn btn-success"><span class="glyphicon glyphicon-pencil" value="modifier"></span> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
+                                <input type="submit" class="btn btn-success"> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
 <?= $comment['id']?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> </div>
                             <br>
                             <br> </form>
