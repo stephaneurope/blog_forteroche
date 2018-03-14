@@ -1,17 +1,15 @@
-<?php  include "menu.php"?>
-    <div class="container admin add">
-        <div class="row ">
-            <br>
-            <h1>Commentaires signalés</h1>
-            <br>
-            <?php 
+    <?php  include "menu.php" ?>
+        <div class="container admin add">
+            <div class="row ">
+                <br>
+                <h1>Commentaires signalés</h1>
+                <br>
 
-while ($comment = $comments->fetch())
+                <?php 
+    if ($comments->rowcount() == 0) { ?>
+               <div class="noRequest"> <p>il n'y a pas de commentaires signalés</p></div>
+                <?php } while ($comment = $comments->fetch())
 {
-        $mess_erreur = $comment->rowCount();
-    if ($mess_erreur == 0) { ?>
-                <p>il n'y a pas de message</p>
-                <?php }  else{
 ?>
                     <form class="form" role="form" action="index.php?action=newComment&amp;id=
 <?= $comment['id']?>" method="post" enctype="multipart/form-data">
@@ -28,7 +26,10 @@ while ($comment = $comments->fetch())
                         <br>
                         <br> </form>
                     <?php
-}}
+}
 ?>
+                           
+    
+    
+            </div>
         </div>
-    </div>

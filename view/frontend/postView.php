@@ -6,7 +6,7 @@ $Session = new \Forteroche\Blog\Session();
 
 ?>
     <?php $this->title = htmlspecialchars($post['title']) ?>
-        <?php  include "menu.php"?>
+        <?php  include "menu.php" ?>
             <!-- Intro Header -->
             <header class="masthead">
                 <div class="intro-body">
@@ -31,7 +31,10 @@ $Session = new \Forteroche\Blog\Session();
             </div>
             <div class="comment">
                 <h3>Commentaires</h3></div>
-            <?php
+           <?php 
+    if ($comments->rowcount() == 0) { ?>
+               <div class="noComment"> <p>Il n'y a pas encore de commentaires </p></div>
+                <?php }
 while ($comment = $comments->fetch())
 {
 ?>

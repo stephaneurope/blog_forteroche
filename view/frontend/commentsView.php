@@ -4,7 +4,10 @@
             <br>
             <h1>Editions des Commentaires </h1>
             <br>
-            <?php
+             <?php 
+    if ($comments->rowcount() == 0) { ?>
+               <div class="noRequest"> <p>il n'y a pas de commentaires</p></div>
+                <?php }
 while ($comment = $comments->fetch())
 {
 ?>

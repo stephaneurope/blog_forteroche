@@ -284,7 +284,7 @@
                     margin-bottom: 10px;
                     float: right;
                 }
-                /***************Messages Flash***********************/
+                /***************Messages Flash et Autres***********************/
                 
                 .flash {
                     margin-right: auto;
@@ -303,6 +303,30 @@
                     box-shadow: 0 0 18px #ccc;
                     width: 50%;
                     text-align: center;
+                }
+                
+                .noRequest  {
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 2em;
+                    background-color:  #00a6d6;
+                    width:50%;
+                    margin:0 auto;
+                    border-radius:5px;
+
+                }
+
+                .noComment  {
+                    padding: 10px;
+                    text-align: center;
+                    font-size:1.1em;
+                    font-weight: bold;
+                    border:2px solid  #00a6d6;
+                    width:70%;
+                    margin:0 auto;
+                    background-color: #fff;
+                 
+
                 }
                 /***************Autres*******************************/
                 
@@ -392,4 +416,14 @@
                         background-size: cover;
                         font-family: 'Pacifico', cursive;
                     }
+                    .noRequest  {
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 1.2em;
+                    background-color:  #00a6d6;
+                    width:50%;
+                    margin:0 auto;
+                    border-radius:5px;
+
+                }
                 }
