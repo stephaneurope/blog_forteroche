@@ -42,7 +42,7 @@ class CommentManager extends Manager
     }
    public function boolean($commentId){
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET moderate = 1 WHERE id = ?');
+        $req = $db->prepare('UPDATE comments SET moderate = 1  WHERE id = ?');
          $comment =$req->execute(array($commentId));
        return $comment;
     }

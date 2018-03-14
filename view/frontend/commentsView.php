@@ -7,7 +7,7 @@
              <?php 
     if ($comments->rowcount() == 0) { ?>
                <div class="noRequest"> <p>il n'y a pas de commentaires</p></div>
-               <div><a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a></div>
+               <div><a class="btn btn-primary btn-reduc1" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a></div>
                 <?php }
 while ($comment = $comments->fetch())
 {

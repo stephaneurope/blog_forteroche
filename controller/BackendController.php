@@ -62,8 +62,14 @@ public function newComment($commentId,$comment)
     public function eraseComment($commentId){
      $commentManager = new \Forteroche\Blog\Model\CommentManager();
     $deleteComment = $commentManager->deleteComment($_GET['id']);
- header('Location: index.php?action=board');
+ header('Location: index.php?action=commentsView&id='. $postId);
 }
+public function reability($commentId)
+{
+    $commentManager = new \Forteroche\Blog\Model\CommentManager();
+    $comment = $commentManager->demoderate($_GET['id']);
+        header('Location: index.php?action=board'); 
+    }
     
     
      public function connect(){
@@ -87,12 +93,7 @@ public function newComment($commentId,$comment)
       
 }
    
-    public function reability($commentId)
-{
-    $commentManager = new \Forteroche\Blog\Model\CommentManager();
-    $comment = $commentManager->demoderate($_GET['id']);
-        header('Location: index.php?action=board'); 
-    }
+    
     
     public function commentAction()
 {

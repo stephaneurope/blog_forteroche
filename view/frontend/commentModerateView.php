@@ -22,7 +22,7 @@
                                 <?= nl2br(htmlspecialchars($comment['comment']))?>
                             </textarea><span class="help-inline"></span></div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span> Modifier</button> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
+                            <button type="submit" class="btn btn-success btn-reduc1"><span class="glyphicon glyphicon-pencil"></span> Modifier</button> <a class="btn btn-primary btn-reduc1" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger btn-reduc1" href="index.php?action=eraseComment&amp;id=
 <?= $comment['id']?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> </div>
                         <br>
                         <br> </form>

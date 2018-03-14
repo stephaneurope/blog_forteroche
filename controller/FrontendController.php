@@ -11,11 +11,13 @@ require('controller/session.class.php');
 class FrontendController{
 
     
- public function moderate($commentId)
+ public function moderate($postId)
 {
+if (isset($_GET['id']) && $_GET['id'] > 0) {
     $commentManager = new \Forteroche\Blog\Model\CommentManager();
-    $comment = $commentManager->boolean($commentId);
-    header('Location: index.php?action=post&id='. $postId);
+    $comment = $commentManager->boolean($_GET['id']);
+    $affectedLines = $commentManager->getComments($postId);
+     header('Location: index.php?action=post&id='. $postId);}
 
     } 
     
