@@ -1,5 +1,5 @@
 <?php 
-require_once('controller/session.class.php'); 
+require_once('controller/SessionController.php'); 
 $Session = new \Forteroche\Blog\Session();
 ?>
 <?php  include "menu.php"?>

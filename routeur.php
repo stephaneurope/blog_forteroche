@@ -3,8 +3,8 @@
     require_once('controller/FrontendController.php'); 
     require_once('controller/BackendController.php');
     require_once('controller/AdminController.php');
-    require_once('controller/session.class.php'); 
-    class Root {
+    require_once('controller/SessionController.php'); 
+    class Routeur {
 
         
     public function checkUrl(){

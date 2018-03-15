@@ -5,7 +5,7 @@ $manager = new \Forteroche\Blog\Model\Manager;?>
 
 
 $this->title = 'Billet simple pour l\'Alaska' ?>
-        <?php  include "menu.php"?>
+        <?php  include "menu.php" ?>
             <!-- Intro Header -->
             <header class="masthead">
                 <div class="intro-body">
