@@ -28,7 +28,7 @@
                 <em>le <?= htmlspecialchars($data['creation_date_fr']) ?></em>
             </h3>
                         <div class='post'>
-                            <?= $manager->texte_decoupe($data['content'], 500, '[...]') ?>
+                            <?= $cut->texte_decoupe($data['content'], 500, '[...]') ?>
                                 <br/>
                                 <br/> <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre...</a></em> </div>
                     </div>

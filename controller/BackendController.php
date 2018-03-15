@@ -4,7 +4,7 @@
     require_once('model/PostManager.php');
     require_once('model/CommentManager.php');
     require_once('view/frontend/view.php');
-    require_once('controller/SessionController.php');
+    require_once('app/MessageFlash.php');
 
     class BackendController{
       

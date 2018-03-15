@@ -3,9 +3,9 @@
     // Chargement des classes
     require_once('model/PostManager.php');
     require_once('model/CommentManager.php');
-    require_once('model/Manager.php');
      require_once('view/frontend/view.php');
-    require('controller/SessionController.php');
+    require_once('app/messageFlash.php');
+     require_once('app/Text_cut.php');
 
 
     class FrontendController{
@@ -45,13 +45,13 @@
         public function listPosts()
     {
         $postManager = new \Forteroche\Blog\Model\PostManager();
-        $manager = new \Forteroche\Blog\Model\Manager;
+        $cut = new \Forteroche\Blog\Model\Cut;
         $posts = $postManager->limitGetPosts();
          $chapters = $postManager->getPosts(); 
             
            
         $view = new View('listPostsView');
-       $view->generer(['posts' => $posts,'chapters'=>$chapters,'manager'=>$manager]);
+       $view->generer(['posts' => $posts,'chapters'=>$chapters,'cut'=>$cut]);
         
     }
 

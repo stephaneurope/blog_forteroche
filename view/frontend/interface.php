@@ -1,6 +1,6 @@
 <?php 
 
-require_once('controller/SessionController.php'); 
+require_once('app/MessageFlash.php');
 $Session = new \Forteroche\Blog\Session();
 ?>
     <?php  include "menu.php"?>
