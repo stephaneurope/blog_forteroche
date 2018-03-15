@@ -144,11 +144,9 @@
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['comment'])) {
                     $ctrlBackend->newComment($_POST['comment'],$_GET['id']);
-                     header('Location: index.php?action=commentsView&id='. $postId);
+                     
                 }
-                else {
-                    echo 'Erreur : tous les champs ne sont pas remplis !';
-                }
+               
             }
             
         }
@@ -186,7 +184,7 @@
                 
                   if (isset($_GET['id']) && $_GET['id'] > 0) {
               
-                  $ctrlfrontend->moderate($_GET['id'],$postId);
+                  $ctrlfrontend->moderate($_GET['id']);
                    
               
                   }
@@ -198,11 +196,9 @@
              elseif ($_GET['action'] == 'modifPost') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['content'])&& !empty($_POST['title'])&& !empty($_POST['chapter'])) {
-                    $ctrlBackend->modifPost($_POST['content'],$_POST['title'],$_POST['chapter'],$_GET['id']);
+                    $ctrlBackend->modifPost($_GET['id'],$_POST['content'],$_POST['title'],$_POST['chapter']);
                 }
-                else {
-                    echo 'Erreur : tous les champs ne sont pas remplis !';
-                }
+                
             }
             
         }

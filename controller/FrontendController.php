@@ -11,12 +11,13 @@
     class FrontendController{
 
         
-     public function moderate($postId)
+     public function moderate($commentId)
     {
     if (isset($_GET['id']) && $_GET['id'] > 0) {
         $commentManager = new \Forteroche\Blog\Model\CommentManager();
-        $comment = $commentManager->boolean($_GET['id']);
-        $affectedLines = $commentManager->getComments($postId);
+        $commentManager->boolean($_GET['id']);
+        $comment = $commentManager->getComment($_GET['id']);
+        $postId = $comment['post_id'];
          header('Location: index.php?action=post&id='. $postId);}
 
         } 
@@ -44,13 +45,13 @@
         public function listPosts()
     {
         $postManager = new \Forteroche\Blog\Model\PostManager();
-            $manager = new \Forteroche\Blog\Model\Manager;
+        $manager = new \Forteroche\Blog\Model\Manager;
         $posts = $postManager->limitGetPosts();
          $chapters = $postManager->getPosts(); 
             
            
         $view = new View('listPostsView');
-       $view->generer(['posts' => $posts,'chapters'=>$chapters]);
+       $view->generer(['posts' => $posts,'chapters'=>$chapters,'manager'=>$manager]);
         
     }
 

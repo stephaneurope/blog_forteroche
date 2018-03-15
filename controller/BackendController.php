@@ -19,17 +19,27 @@
       
     }
         
-    public function newComment($commentId,$comment)
+        public function newComment($commentId,$comment)
     {
         $commentManager = new \Forteroche\Blog\Model\CommentManager();
-
         $reaffectedLines = $commentManager->updateComment($commentId,$comment);
-
-       
-           
-        
+        $comment = $commentManager->getComment($_GET['id']);
+        $postId = $comment['post_id'];
+        header('Location: index.php?action=commentsView&id='. $postId);
+              
     }
+        public function eraseComment($commentId)
+    {
+        $commentManager = new \Forteroche\Blog\Model\CommentManager();
+        $comment = $commentManager->getComment($_GET['id']);
+        $postId = $comment['post_id'];
+        $deleteComment = $commentManager->deleteComment($commentId);
         
+        $postId = $comment['post_id'];
+      
+        header('Location: index.php?action=commentsView&id='. $postId);
+     
+    }
        public function changePost($postId) 
     { 
         $postManager = new \Forteroche\Blog\Model\PostManager();
@@ -41,11 +51,9 @@
        public function modifPost($postId,$content,$title,$chapter)
     {
         $postManager = new \Forteroche\Blog\Model\PostManager();
-
         $reaffectedLines = $postManager->updatePost($postId,$content,$title,$chapter);
-
-       
-            header('Location: index.php?action=board');
+        header('Location: index.php?action=editPost&id='. $postId);
+       exit;
         
     }
        public function cleanPost($postId){
@@ -59,16 +67,12 @@
         $deleteLines = $postManager->deletePost($_GET['id']);
      header('Location: index.php?action=board');
     }
-        public function eraseComment($commentId){
-         $commentManager = new \Forteroche\Blog\Model\CommentManager();
-        $deleteComment = $commentManager->deleteComment($_GET['id']);
-     header('Location: index.php?action=commentsView&id='. $postId);
-    }
+        
     public function reability($commentId)
     {
         $commentManager = new \Forteroche\Blog\Model\CommentManager();
         $comment = $commentManager->demoderate($_GET['id']);
-            header('Location: index.php?action=board'); 
+            header('Location: index.php?action=commentAction'); 
         }
         
         
