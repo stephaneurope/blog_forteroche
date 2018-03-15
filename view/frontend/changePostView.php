@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label for="description">Contenu:</label>
                         <textarea id="comment" name="comment">
-                            <?= htmlspecialchars($comment['comment'])?>
+                            <?= $comment['comment']?>
                         </textarea><span class="help-inline"></span></div>
                     <br>
                     <div class="form-actions"> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
