@@ -48,7 +48,7 @@ while ($comment = $comments->fetch())
                             <input href="#" class='signal' type="submit" value='signaler' /> </form>
                         <?php } else{ ?>
                             <form action="" method="post">
-                                <input class='signal' type="submit" value='commentaire signalé' style='color:red' /> </form>
+                                <input class='signal' type="submit" value='signalé' style='color:red' /> </form>
                             <?php } ?>
                                 <p>
                                     <?= nl2br(htmlspecialchars($comment['comment']))?>

@@ -1,9 +1,15 @@
-<?php  include "menu.php"?>
+<?php  include "menu.php";
+require_once('app/MessageFlash.php');
+$Session = new \Forteroche\Blog\Session();
+?>
     <?php $this->title = 'Editer le chapitre' ?>
         <div class="container admin add">
             <div class="row ">
                 <h1><strong>Modifier ce chapitre </strong></h1>
                 <br>
+                <div class="flashconnect">
+                                <?php $Session->flash();?>
+                            </div>
                 <form class="form" role="form" action="index.php?action=modifPost&amp;id=
 <?= $post['id']?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -14,14 +20,12 @@
                         <input type="text" class="form-control" id="title" name="title" placeholder="Titre" value="<?= htmlspecialchars($post['title']) ?>"> <span class="help-inline"></span> </div>
                     <div class="form-group">
                         <label for="description">Contenu:</label>
-                        <textarea type="textarea" class="form-control" id="content" name="content" value="
-           
-        ">
+                        <textarea type="textarea" class="form-control" id="content" name="content">
                             <?= $post['content']?>
-                        </textarea> <span class="help-inline"></span> </div>
+                        </textarea>  </div>
                     <br>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span> Modifier</button> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a> </div>
+                        <input type="submit" class="btn btn-success" value="Modifier"> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a> </div>
                 </form>
             </div>
         </div>

@@ -1,8 +1,11 @@
-<?php  include "menu.php"?>
+<?php  include "menu.php";
+require_once('app/MessageFlash.php'); 
+$Session = new \Forteroche\Blog\Session(); ?>
     <div class="container admin add">
         <div class="row ">
             <br>
-            <h1>Editions des Commentaires </h1>
+            
+            <h1> Editions des Commentaires </h1>
             <br>
              <?php 
     if ($comments->rowcount() == 0) { ?>
@@ -24,8 +27,8 @@ while ($comment = $comments->fetch())
                                     <?= $comment['comment']?>
                                 </textarea><span class="help-inline"></span></div>
                             <div class="form-actions">
-                                <input type="submit" class="btn btn-success"> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
-<?= $comment['id']?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> </div>
+                                <input type="submit" class="btn btn-success" value="Modifier"> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=
+<?= htmlspecialchars($comment['id'])?>"><span class="glyphicon glyphicon-remove"> Suprimer</span></a> </div>
                             <br>
                             <br> </form>
                 <?php
@@ -33,3 +36,6 @@ while ($comment = $comments->fetch())
 ?>
         </div>
     </div>
+     <div class="flashconnect">
+                    <?php $Session->flash();?>
+                </div>

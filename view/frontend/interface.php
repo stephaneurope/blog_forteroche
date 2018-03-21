@@ -3,7 +3,7 @@
 require_once('app/MessageFlash.php');
 $Session = new \Forteroche\Blog\Session();
 ?>
-    <?php  include "menu.php"?>
+    <?php  include "menu.php" ?>
         <div>
             <div class="container admin">
                 <div class="flashconnect">

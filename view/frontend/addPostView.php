@@ -1,8 +1,14 @@
-<?php  include "menu.php" ?>
+<?php  include "menu.php";
+require_once('app/MessageFlash.php'); 
+$Session = new \Forteroche\Blog\Session();
+ ?>
     <div class="container admin add">
         <div class="row ">
             <h1><strong>Ajouter un chapitre </strong></h1>
             <br>
+             <div class="flashconnect">
+                                <?php $Session->flash();?>
+                            </div>
             <form action='index.php?action=otherPost' method="post">
                 <div class="form-group">
                     <label for="name">Chapitre:</label>
