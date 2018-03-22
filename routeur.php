@@ -24,7 +24,9 @@ class Routeur {
           if (isset($_GET['id']) && $_GET['id'] > 0) {
 
             $ctrlfrontend->post();
-         }
+         }else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 }
        
        elseif ($_GET['action'] == 'connect'){
@@ -41,9 +43,9 @@ class Routeur {
         if($_SESSION){
           $ctrlfrontend->board();
         }else{
-          //header("HTTP/1.1 403 Unauthorized" );
-         // exit;
-          throw new Exception('Division par zéro.');
+         throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
+         
+         
     }
         }
       
@@ -56,8 +58,7 @@ class Routeur {
 
         $ctrlBackend->commentAction();}
         else{
-          header("HTTP/1.1 403 Unauthorized" );
-          exit;
+         throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
         }
       }
       elseif ($_GET['action'] == 'addPost'){
@@ -66,8 +67,7 @@ class Routeur {
 
         $ctrlBackend->addPost();       
       } else{
-        header("HTTP/1.1 403 Unauthorized" );
-        exit;
+       throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
       }
     }
     elseif ($_GET['action'] == 'cleanPost'){
@@ -76,11 +76,12 @@ class Routeur {
       if($_SESSION){
         $ctrlBackend->cleanPost($_GET['id']);
       } else{
-        header("HTTP/1.1 403 Unauthorized" );
-        exit;
+        throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
       }
 
-    }//exception 
+    }else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
   }
   elseif ($_GET['action'] == 'editPost'){
    if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -90,10 +91,12 @@ class Routeur {
     } else{
       header("HTTP/1.1 403 Unauthorized" );
       exit;
-      //throw new Exception('Division par zéro.');
+     
     }
 
-  } //exception
+  }else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    } 
 }
 
 elseif ($_GET['action'] == 'commentsView') {
@@ -107,7 +110,9 @@ elseif ($_GET['action'] == 'commentsView') {
     header("HTTP/1.1 403 Unauthorized" );
     exit;
   }
-}//exception
+}else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 }
 elseif ($_GET['action'] == 'editComment'){
  if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -117,7 +122,9 @@ elseif ($_GET['action'] == 'editComment'){
     header("HTTP/1.1 403 Unauthorized" );
     exit;}
 
-  } //exception
+  } else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 }
 
 /*******************************/ 
@@ -125,14 +132,18 @@ elseif ($_GET['action'] == 'editComment'){
 elseif ($_GET['action'] == 'moderate'){
   if (isset($_GET['id']) && $_GET['id'] > 0) {
     $ctrlfrontend->moderate($_GET['id']);
-  }
+  }else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 
 } 
 
 elseif ($_GET['action'] == 'reability') {
 if (isset($_GET['id']) && $_GET['id'] > 0) {
   $ctrlBackend->reability();   
-  }    
+  } else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }   
 }
 
 
@@ -141,7 +152,9 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 elseif ($_GET['action'] == 'addComment') {
   if (isset($_GET['id']) && $_GET['id'] > 0){
    $ctrlfrontend->addComment($_GET['id'], $_POST['author'],$_POST['comment']);
- }
+ }else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 
 
 }
@@ -160,20 +173,26 @@ elseif ($_GET['action'] == 'newComment') {
 
     }
 
-  }
+  }else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 
 }
 /***********effacer un post***************/ 
 elseif ($_GET['action'] == 'erasePost'){
  if (isset($_GET['id']) && $_GET['id'] > 0) {
   $ctrlBackend->erasePost($_GET['id']);
-} 
+} else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 } 
 /***********effacer un commentaire***************/ 
 elseif ($_GET['action'] == 'eraseComment'){
  if (isset($_GET['id']) && $_GET['id'] > 0) {
   $ctrlBackend->eraseComment($_GET['id']);  
-} 
+}else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    } 
 }
 
 /************** connexion et déconnexion *****************/
@@ -198,7 +217,9 @@ elseif ($_GET['action'] == 'modifPost') {
   if (isset($_GET['id']) && $_GET['id'] > 0) {
    
      $ctrlBackend->modifPost($_GET['id'],$_POST['content'],$_POST['title'],$_POST['chapter']);
-}
+}else{
+      throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
+    }
 
 }
 
@@ -207,10 +228,10 @@ elseif ($_GET['action'] == 'modifPost') {
 
    } catch(Exception $e){ // S'il y a eu une erreur, alors...
   
-   $ctrlfrontend->error();  ?> 
-  <div class='essai1'> <?php  "Exception reçue : " .  $e->getMessage() ."\n"; ?> </div><?php
+   $ctrlfrontend->error(); ?>  
+ <div class="exception"> <?php echo( $e->getMessage() ."\n"); ?> </div> <?php
    
-   //$ctrlfrontend->gererErreur();
+   
   }
 
 } 

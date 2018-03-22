@@ -1,9 +1,13 @@
                     /**************General****************/
-                    .essai1{
+                    .exception{
                         margin-top: 200px;
                         color:black;
                         margin:0 auto;
                         text-align: center;
+                        font-size: 2em;
+                        color: #fff;
+                        background-color: #00a6d6;
+                        padding:20px;
                     }
                     body {
                         width: 100%;

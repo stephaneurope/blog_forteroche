@@ -18,7 +18,7 @@ require_once('routeur.php');
                     </div>
                 </header>
 
-                    <div class="news"></div>
+    
                        
                         
                 
