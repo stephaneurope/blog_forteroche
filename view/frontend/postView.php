@@ -61,7 +61,7 @@ while ($comment = $comments->fetch())
                         <h3>Laissez un commentaire</h3></div>
                     <div class="news">
                         <form action="index.php?action=addComment&amp;id=
-<?= $post['id']?>" method="post">
+<?= htmlspecialchars($post['id'])?>" method="post">
                             <div>
                                 <label for="author">Auteur</label>
                                 <br />

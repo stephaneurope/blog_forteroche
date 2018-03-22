@@ -32,7 +32,7 @@ public function addComment($postId, $author,$comment)
         $affectedLines = $commentManager->postComment($postId,$author,$comment);
         $Session = new \Forteroche\Blog\Session();
         
-        $Session->setFlash('Votre commentaire a bien été ajouté');
+        $Session->setFlash('Votre commentaire a bien été ajouté','');
         header('Location: index.php?action=post&id=' . $postId);}else{
           $Session = new \Forteroche\Blog\Session();
           $Session->setFlash('Vous n\'avez pas rempli tous les champs',''); 

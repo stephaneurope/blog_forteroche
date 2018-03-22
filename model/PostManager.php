@@ -32,7 +32,7 @@ public function updatePost($postId,$content,$title,$chapter)
 {
     $db = $this->dbConnect();
     $req = $db->prepare('UPDATE posts SET content = ?, title = ?, chapter = ?  WHERE id = ? ');
-    $reaffected =$req->execute(array($postId,$content,$title,$chapter));
+    $reaffected =$req->execute(array($content,$title,$chapter,$postId));
     return $reaffected;
 
 }

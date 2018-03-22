@@ -334,7 +334,7 @@
                         width:70%;
                         margin:0 auto;
                         background-color: #fff;
-                     
+                        
 
                     }
                     /***************Autres*******************************/
@@ -426,135 +426,135 @@
                             font-family: 'Pacifico', cursive;
                         }
                         .noRequest  {
-                        padding: 20px;
-                        text-align: center;
-                        font-size: 1.2em;
-                        background-color:  #00a6d6;
-                        width:50%;
-                        margin:0 auto;
-                        border-radius:5px;
+                            padding: 20px;
+                            text-align: center;
+                            font-size: 1.2em;
+                            background-color:  #00a6d6;
+                            width:50%;
+                            margin:0 auto;
+                            border-radius:5px;
 
-                    }
-    .news {
-                        width: 100%;
-                        margin: auto;
-                        margin-bottom: 70px;
-                    }
-                     .news a {
-                        box-shadow: 0.2em 0.2em #00629b;
-                        text-decoration: none;
-                        float: right;
-                        color: #fff;
-                        font-weight: bold;
-                        background-color: #00a6d6;
-                        padding: 2px;
-                        margin-right: 0px;
-                         margin-top:12px;
-                        margin-bottom: 20px;
-                        border-radius: 3px;
-                    }
-                     .post {
-                        background-color: #fff;
-                        margin-top: 0px;
-                        padding-top: 10px;
-                        font-size: 16px;
-                        padding-bottom:20px;
-                        padding-left: 20px;
-                        padding-right: 10px;
-                        border: 2px solid #ccc;
-                    }
+                        }
+                        .news {
+                            width: 100%;
+                            margin: auto;
+                            margin-bottom: 70px;
+                        }
+                        .news a {
+                            box-shadow: 0.2em 0.2em #00629b;
+                            text-decoration: none;
+                            float: right;
+                            color: #fff;
+                            font-weight: bold;
+                            background-color: #00a6d6;
+                            padding: 2px;
+                            margin-right: 0px;
+                            margin-top:12px;
+                            margin-bottom: 20px;
+                            border-radius: 3px;
+                        }
+                        .post {
+                            background-color: #fff;
+                            margin-top: 0px;
+                            padding-top: 10px;
+                            font-size: 16px;
+                            padding-bottom:20px;
+                            padding-left: 20px;
+                            padding-right: 10px;
+                            border: 2px solid #ccc;
+                        }
 
-                    .comment h3 {
-                        box-shadow: inset 0.9em 0 #00a6d6;
-                        background-color: #00629b;
-                        color: white;
-                        font-size: 0.9em;
-                        margin-bottom: 0px;
-                        padding: 15px;
-                        font-size: 12px;
-                        letter-spacing: 4px;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        margin-top: 20px;
-                        margin-left: auto;
-                        margin-right: auto;
-                        width: 100%;
-                        border-top-right-radius: 5px;
-                        border-top-left-radius: 5px;
-                    }
-                    .modif {
-                        background-color: #fff;
-                        font-weight: bold;
-                        width: 100%;
-                        margin: auto;
-                        border: 2px solid #ccc;
-                        padding: 10px;
-                    }
-                      .news form {
-                        background-color: #fff;
-                        margin-top: 0px;
-                        padding-top: 10px;
-                        padding-bottom: 15px;
-                        padding-left:5px;
-                        padding-right:5px;
-             
-                        border: 2px solid #ccc;
-                    }
-                     .auth {
-                        width: 100%;
-                    }
-                     .news textarea {
-                        width: 100%;
-                    }
-                     .submit {
-                        box-shadow: 0.2em 0.2em #00629b;
-                        text-decoration: none;
-                        float: right;
-                        color: #fff;
-                        font-weight: bold;
-                        background-color: #00a6d6;
-                        padding: 4px;
-                        margin-right: 10px;
-                        border-radius: 10px;
-                    }
-                     .signal {
-                        background-color: #fff;
-                        color: blue;
-                        border: none;
-                        margin-bottom: 10px;
-                        float: right;
-                        font-size:12px;
-                        
-                    }
-                  td{
-                   font-size:11px;             
-                    }
+                        .comment h3 {
+                            box-shadow: inset 0.9em 0 #00a6d6;
+                            background-color: #00629b;
+                            color: white;
+                            font-size: 0.9em;
+                            margin-bottom: 0px;
+                            padding: 15px;
+                            font-size: 12px;
+                            letter-spacing: 4px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            margin-top: 20px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            width: 100%;
+                            border-top-right-radius: 5px;
+                            border-top-left-radius: 5px;
+                        }
+                        .modif {
+                            background-color: #fff;
+                            font-weight: bold;
+                            width: 100%;
+                            margin: auto;
+                            border: 2px solid #ccc;
+                            padding: 10px;
+                        }
+                        .news form {
+                            background-color: #fff;
+                            margin-top: 0px;
+                            padding-top: 10px;
+                            padding-bottom: 15px;
+                            padding-left:5px;
+                            padding-right:5px;
+                            
+                            border: 2px solid #ccc;
+                        }
+                        .auth {
+                            width: 100%;
+                        }
+                        .news textarea {
+                            width: 100%;
+                        }
+                        .submit {
+                            box-shadow: 0.2em 0.2em #00629b;
+                            text-decoration: none;
+                            float: right;
+                            color: #fff;
+                            font-weight: bold;
+                            background-color: #00a6d6;
+                            padding: 4px;
+                            margin-right: 10px;
+                            border-radius: 10px;
+                        }
+                        .signal {
+                            background-color: #fff;
+                            color: blue;
+                            border: none;
+                            margin-bottom: 10px;
+                            float: right;
+                            font-size:12px;
+                            
+                        }
+                        td{
+                         font-size:11px;             
+                     }
 
-                    .btn-reduc{
-                     font-size:11px!important;
-                     width:100px!important;
-                    }
-                    .btn-reduc1{
-                     font-size:11px!important;
-                     width:70px!important;
-                    }
-                    .form-group {
-                        margin-top:30px;
-                    }
-                     input{
-                                     margin-bottom:10px;
-                                     width:100px;
-                                    }
-                                    #footer {
-                        width: 100%;
-                        padding: 2px;
-                        margin-top: 20px;
-                        text-align: center;
-                        background-color: #003865;
-                        color: #fff;
-                    }
-                    .btn_decale{
-                        margin-top:20px;
-                    }
+                     .btn-reduc{
+                       font-size:11px!important;
+                       width:100px!important;
+                   }
+                   .btn-reduc1{
+                       font-size:11px!important;
+                       width:70px!important;
+                   }
+                   .form-group {
+                    margin-top:30px;
+                }
+                input{
+                   margin-bottom:10px;
+                   width:100px;
+               }
+               #footer {
+                width: 100%;
+                padding: 2px;
+                margin-top: 20px;
+                text-align: center;
+                background-color: #003865;
+                color: #fff;
+            }
+            .btn_decale{
+                margin-top:20px;
+            }
 
-                    }
+        }
