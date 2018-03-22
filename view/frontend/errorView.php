@@ -1,6 +1,7 @@
 <?php 
-    session_start();
 
+
+require_once('routeur.php');
     $this->title = 'Billet simple pour l\'Alaska' ?>
             <?php  include "menu.php" ?>
                 <!-- Intro Header -->
@@ -17,11 +18,8 @@
                     </div>
                 </header>
 
-                    <div class="news">
-                        <h3><?php $ctrlfrontend->gererErreur();;?>
-                              
-                            
-                        </h3>
+                    <div class="news"></div>
+                       
                         
                 
                 

@@ -20,7 +20,7 @@ class AdminController{
   {
    $Session = new \Forteroche\Blog\Session();
    $Session->setFlash('Mauvais identifiant ou mot de Passe','');
-   header('Location: index.php?action=board');
+   header('Location: index.php?action=connect');
    exit;
  }
  else

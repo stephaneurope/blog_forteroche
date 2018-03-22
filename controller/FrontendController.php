@@ -87,17 +87,12 @@ public function error()
     $post = $postManager;
     $comments = $commentManager;
     $chapters = $postManager->getPosts(); 
-   
     $view = new View('errorView');
     $view->generer(['post' => $post,'comments' => $comments,'chapters'=>$chapters]);
     
 }
 
-public function gererErreur(Exception $exception) {
-    $vue = new View('error');
-  
-    $vue->generer(array('msgErreur' => $exception->getMessage()));
-  }
+
 
 
 }

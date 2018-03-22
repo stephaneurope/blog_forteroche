@@ -1,5 +1,10 @@
                     /**************General****************/
-                    
+                    .essai1{
+                        margin-top: 200px;
+                        color:black;
+                        margin:0 auto;
+                        text-align: center;
+                    }
                     body {
                         width: 100%;
                         background-color: #ECF0F5;

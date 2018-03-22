@@ -31,13 +31,12 @@ public function getPost($postId)
 public function updatePost($postId,$content,$title,$chapter)
 {
     $db = $this->dbConnect();
-    $req = $db->prepare('UPDATE posts SET content = ?  WHERE id = ? ');
+    $req = $db->prepare('UPDATE posts SET content = ?, title = ?, chapter = ?  WHERE id = ? ');
     $reaffected =$req->execute(array($postId,$content,$title,$chapter));
     return $reaffected;
 
 }
-public function deletePost($postId)
-{
+public function deletePost($postId){
   $db = $this->dbConnect();
   $req = $db->prepare('DELETE FROM posts  WHERE id = ?'); 
   $deleteLines= $req->execute(array($postId));

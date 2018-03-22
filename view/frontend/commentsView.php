@@ -16,7 +16,7 @@ while ($comment = $comments->fetch())
 {
 ?>
                 <form class="form" role="form" action="index.php?action=newComment&amp;id=
-<?= $comment['id']?>" method="post" enctype="multipart/form-data">
+<?= strip_tags($comment['id'])?>" method="post" enctype="multipart/form-data">
                     <input value="<?= htmlspecialchars($comment['author']) ?>"> le
                     <input value="<?= htmlspecialchars($comment['comment_date_fr']) ?>">
                     <?php if($comment['moderate']== '1') { ?> <a class=" btn btn-success" href="index.php?action=reability&amp;id=<?= htmlspecialchars($comment['id']) ?>"> désignaler </a>
@@ -24,7 +24,7 @@ while ($comment = $comments->fetch())
                             <br/>
                             <div class="form-group">
                                 <textarea id="comment" name="comment">
-                                    <?= $comment['comment']?>
+                                    <?= strip_tags($comment['comment'])?>
                                 </textarea><span class="help-inline"></span></div>
                             <div class="form-actions">
                                 <input type="submit" class="btn btn-success" value="Modifier"> <a class="btn btn-primary" href="index.php?action=board"><span class="glyphicon glyphicon-arrow-left"> Retour</span></a><a class="btn btn-danger" href="index.php?action=eraseComment&amp;id=

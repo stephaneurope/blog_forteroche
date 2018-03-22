@@ -41,10 +41,12 @@ class Routeur {
         if($_SESSION){
           $ctrlfrontend->board();
         }else{
-          header("HTTP/1.1 403 Unauthorized" );
-          exit;
+          //header("HTTP/1.1 403 Unauthorized" );
+         // exit;
+          throw new Exception('Division par zéro.');
+    }
         }
-      }
+      
 
 
       elseif ($_GET['action'] == 'commentAction') {
@@ -88,6 +90,7 @@ class Routeur {
     } else{
       header("HTTP/1.1 403 Unauthorized" );
       exit;
+      //throw new Exception('Division par zéro.');
     }
 
   } //exception
@@ -114,7 +117,7 @@ elseif ($_GET['action'] == 'editComment'){
     header("HTTP/1.1 403 Unauthorized" );
     exit;}
 
-  } 
+  } //exception
 }
 
 /*******************************/ 
@@ -201,14 +204,14 @@ elseif ($_GET['action'] == 'modifPost') {
 
 
 }
-}
-    catch(Exception $e){ // S'il y a eu une erreur, alors...
+
+   } catch(Exception $e){ // S'il y a eu une erreur, alors...
   
-  
-//$Exception = "Exception reçue : " . $e->getMessage() ."\n";
-    $ctrlfrontend->error();
-   $ctrlfrontend->gererErreur();
+   $ctrlfrontend->error();  ?> 
+  <div class='essai1'> <?php  "Exception reçue : " .  $e->getMessage() ."\n"; ?> </div><?php
+   
+   //$ctrlfrontend->gererErreur();
   }
 
 } 
-}
+} ?>
