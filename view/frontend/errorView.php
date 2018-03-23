@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once('routeur.php');
+
     $this->title = 'Billet simple pour l\'Alaska' ?>
             <?php  include "menu.php" ?>
                 <!-- Intro Header -->
