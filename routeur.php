@@ -13,10 +13,14 @@ class Routeur {
     $ctrlBackend = new \Forteroche\Blog\BackendController();
     $ctrlAdmin = new \Forteroche\Blog\AdminController();
 
+    $tab_action = array("listPosts","post","connect",'board','commentAction','addPost','addPost','cleanPost','editPost','commentsView','editComment','moderate','reability','addComment','otherPost','newComment','erasePost','eraseComment','connexion','deconnexion','modifPost');
+   
+ 
+
     /*********page de vue utilisateur**********/  
 
     try{
-      if (isset($_GET['action'])) {
+      if (isset($_GET['action']) && in_array($_GET['action'], $tab_action)){
         if ($_GET['action'] == 'listPosts') {
           $ctrlfrontend->listPosts();
         }
@@ -122,6 +126,7 @@ elseif ($_GET['action'] == 'editComment'){
  }
 
   } else{
+    session_start();
       throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
     }
 }
@@ -226,8 +231,8 @@ elseif ($_GET['action'] == 'modifPost') {
 }else{throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');}
 
    } catch(Exception $e){ // S'il y a eu une erreur, alors...
-  
-   $ctrlfrontend->error(); ?>  
+  session_start();
+   $ctrlfrontend->error();?>
  <div class="exception"> <?php echo( $e->getMessage() ."\n"); ?> </div> <?php
    
    

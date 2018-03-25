@@ -7,15 +7,15 @@ class PostManager extends Manager
    public function limitGetPosts()
    {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate DESC LIMIT 0, 4 ');
-
+    $req = $db->prepare('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate DESC LIMIT 0, 4 ');
+     $req->execute(array());
     return $req;
 }
 public function getPosts()
 {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate ');
-
+    $req = $db->prepare('SELECT id,user_id, title,chapter, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creationDate ');
+    $req->execute(array());
     return $req;
 }
 
