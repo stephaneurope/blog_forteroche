@@ -18,7 +18,7 @@ class AdminController{
   
   if (!$resultat)
   {
-   $Session = new \Forteroche\Blog\Session();
+   $Session = new \Forteroche\Blog\MessageFlash();
    $Session->setFlash('Mauvais identifiant ou mot de Passe','');
    header('Location: index.php?action=connect');
    exit;
@@ -29,7 +29,7 @@ class AdminController{
     
    if (!empty($_POST['pseudo']) && !empty($_POST['pass'])){
     
-    $Session = new \Forteroche\Blog\Session();
+    $Session = new \Forteroche\Blog\MessageFlash();
     $_SESSION['id'] = $resultat['id'];
     $_SESSION['pseudo'] = $pseudo;
     
@@ -41,7 +41,7 @@ class AdminController{
   
 }
 else {
-  $Session = new \Forteroche\Blog\Session();
+  $Session = new \Forteroche\Blog\MessageFlash();
   $Session->setFlash('Mauvais identifiant ou mot de Passe','');
   header('Location: index.php?action=connect');
   exit;

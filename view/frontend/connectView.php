@@ -1,8 +1,5 @@
-<?php 
-require_once('app/MessageFlash.php'); 
-$Session = new \Forteroche\Blog\Session();
-?>
-<?php  include "menu.php"?>
+
+<?php  include "menu.php" ?>
     <div id="login" class="span3 well well-large offset4">
         <div class="centreConnect">
             <h4>Connexion</h4>
@@ -17,6 +14,6 @@ $Session = new \Forteroche\Blog\Session();
                 <input class="btn btn-success" type="submit" value="Login" /> </form>
         </div>
         <div class="flashconnect">
-            <?php $Session->flash();?>
+            <?php $session->flash();?>
         </div>
     </div>

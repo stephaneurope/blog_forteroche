@@ -1,6 +1,6 @@
 <?php
     namespace Forteroche\Blog;
-    class Session{
+    class MessageFlash{
     public function __construct(){
     $status = session_status();
     if($status == PHP_SESSION_NONE){

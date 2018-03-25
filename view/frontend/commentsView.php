@@ -1,11 +1,4 @@
-<?php  include "menu.php";
-require_once('app/MessageFlash.php'); 
-$Session = new \Forteroche\Blog\Session(); 
-
-
-
-
-?>
+<?php  include "menu.php";?>
     <div class="container admin add">
         <div class="row ">
             <br>
@@ -44,5 +37,5 @@ while ($comment = $comments->fetch())
         </div>
     </div>
      <div class="flashconnect">
-                    <?php $Session->flash();?>
+                    <?php $session->flash();?>
                 </div>

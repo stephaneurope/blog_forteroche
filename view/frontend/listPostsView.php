@@ -1,8 +1,5 @@
 <?php 
     session_start();
-
-
-
     $this->title = 'Billet simple pour l\'Alaska' ?>
             <?php  include "menu.php" ?>
                 <!-- Intro Header -->

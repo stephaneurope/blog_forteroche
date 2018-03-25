@@ -35,13 +35,13 @@ class BackendController{
        if (!empty($_POST['content']) && !empty($_POST['title']) && !empty($_POST['chapter'])) {
         $postManager = new \Forteroche\Blog\Model\PostManager();
         $reaffected = $postManager->updatePost($postId,$content,$title,$chapter);
-        $Session = new \Forteroche\Blog\Session();
+        $Session = new \Forteroche\Blog\MessageFlash();
         $Session->setFlash('Le chapitre a été modifié','');
         
         header('Location: index.php?action=editPost&id='. $postId);
         exit;
         }else{
-        $Session = new \Forteroche\Blog\Session();
+        $Session = new \Forteroche\Blog\MessageFlash();
         $Session->setFlash('Tous les champs ne sont pas remplis','');
         header('Location: index.php?action=editPost&id='. $postId);
         exit;
@@ -64,8 +64,9 @@ class BackendController{
     { 
         $postManager = new \Forteroche\Blog\Model\PostManager();
         $post = $postManager->getPost($_GET['id']);
+        $session = new \Forteroche\Blog\MessageFlash();
         $view = new View('updatePostView'); 
-        $view->generer(array('post' => $post));
+        $view->generer(array('post' => $post,'session' => $session));
 
     }
     
@@ -96,8 +97,9 @@ public function connect(){
  $postManager = new \Forteroche\Blog\Model\PostManager();
  $post = $postManager;
  $chapters = $postManager->getPosts();  
+ $session = new \Forteroche\Blog\MessageFlash();
  $view = new View('connectView'); 
- $view->generer(['post' => $post,'chapters'=>$chapters]);
+ $view->generer(['post' => $post,'chapters'=>$chapters,'session' => $session]);
  
 }
 public function commentsView()
@@ -108,8 +110,8 @@ public function commentsView()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
     $view = new View('commentsView');
-    
-    $view->generer(array('post' => $post,'comments' => $comments));
+    $session = new \Forteroche\Blog\MessageFlash();
+    $view->generer(array('post' => $post,'comments' => $comments, 'session' => $session));
     
 }
 
@@ -129,7 +131,9 @@ public function addPost(){
     $postManager = new \Forteroche\Blog\Model\PostManager();
     $post = $postManager;
     $view = new View('addPostView'); 
-    $view->generer(array('post' => $post));
+    $session = new \Forteroche\Blog\MessageFlash();
+    $view->generer(array('post' => $post,'session' =>$session));
+
 
 }   
 
@@ -138,13 +142,13 @@ public function otherPost($chapter,$title,$content){
    $postManager = new \Forteroche\Blog\Model\PostManager();
    $newLines = $postManager->newPost($chapter,$title,$content);
 
-   $Session = new \Forteroche\Blog\Session();     
+   $Session = new \Forteroche\Blog\MessageFlash();     
      $Session->setFlash('Le chapitre a bien été ajouté','');
         header('Location: index.php?action=board');
         exit;
       }
         else{
-          $Session = new \Forteroche\Blog\Session();
+          $Session = new \Forteroche\Blog\MessageFlash();
           $Session->setFlash("Tous les champs n'ont pas été remplis",''); 
           header('Location: index.php?action=addPost');
           exit;

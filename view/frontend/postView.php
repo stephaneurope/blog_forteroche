@@ -1,10 +1,4 @@
-<?php 
 
-require_once('app/MessageFlash.php');
-$Session = new \Forteroche\Blog\Session();
-
-
-?>
     <?php $this->title = htmlspecialchars($post['title']) ?>
         <?php  include "menu.php" ?>
             <!-- Intro Header -->
@@ -74,7 +68,7 @@ while ($comment = $comments->fetch())
                             <div>
                                 <input class='submit' type="submit" value="Valider" /> </div>
                             <div class="flash">
-                                <?php $Session->flash();?>
+                                <?php $session->flash();?>
                             </div>
                         </form>
                     </div>

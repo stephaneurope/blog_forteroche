@@ -27,14 +27,14 @@ class FrontendController{
 
 public function addComment($postId, $author,$comment)
 {
-    if (!empty($_POST['author']) && !empty($_POST['comment'])){
+    if (!empty(htmlspecialchars(ltrim($_POST['author']))) && !empty(htmlspecialchars(ltrim($_POST['comment'])))){
         $commentManager = new \Forteroche\Blog\Model\CommentManager();
         $affectedLines = $commentManager->postComment($postId,$author,$comment);
-        $Session = new \Forteroche\Blog\Session();
+        $Session = new \Forteroche\Blog\MessageFlash();
         
         $Session->setFlash('Votre commentaire a bien été ajouté','');
         header('Location: index.php?action=post&id=' . $postId);}else{
-          $Session = new \Forteroche\Blog\Session();
+          $Session = new \Forteroche\Blog\MessageFlash();
           $Session->setFlash('Vous n\'avez pas rempli tous les champs',''); 
           header('Location: index.php?action=post&id='. $postId);
           exit;
@@ -65,8 +65,9 @@ public function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
     $chapters = $postManager->getPosts(); 
+    $session = new \Forteroche\Blog\MessageFlash();
     $view = new View('postView');
-    $view->generer(['post' => $post,'comments' => $comments,'chapters'=>$chapters]);
+    $view->generer(['post' => $post,'comments' => $comments,'chapters'=>$chapters,'session'=>$session]);
     
 }
 public function board()
@@ -74,9 +75,9 @@ public function board()
     $postManager = new \Forteroche\Blog\Model\PostManager();
     
     $posts = $postManager->getPosts();
-
+    $session = new \Forteroche\Blog\MessageFlash();
     $view = new View('interface');
-    $view->generer(['posts' => $posts]);
+    $view->generer(['posts' => $posts,'session' => $session]);
     
 }
 

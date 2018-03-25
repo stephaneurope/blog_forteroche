@@ -1,8 +1,5 @@
 <?php 
-
-
-
-    $this->title = 'Billet simple pour l\'Alaska' ?>
+        $this->title = 'Billet simple pour l\'Alaska' ?>
             <?php  include "menu.php" ?>
                 <!-- Intro Header -->
                 <header class="masthead">

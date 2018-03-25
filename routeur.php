@@ -89,8 +89,8 @@ class Routeur {
     if($_SESSION){
       $ctrlBackend->changePost($_GET['id']);
     } else{
-      header("HTTP/1.1 403 Unauthorized" );
-      exit;
+     throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
+      
      
     }
 
@@ -107,8 +107,7 @@ elseif ($_GET['action'] == 'commentsView') {
   }
 
   else{
-    header("HTTP/1.1 403 Unauthorized" );
-    exit;
+    throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
   }
 }else{
       throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
@@ -119,8 +118,8 @@ elseif ($_GET['action'] == 'editComment'){
   if($_SESSION){
     $ctrlBackend->changeComment($_GET['id']);
   } else{
-    header("HTTP/1.1 403 Unauthorized" );
-    exit;}
+   throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
+ }
 
   } else{
       throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
@@ -151,7 +150,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 
 elseif ($_GET['action'] == 'addComment') {
   if (isset($_GET['id']) && $_GET['id'] > 0){
-   $ctrlfrontend->addComment($_GET['id'], $_POST['author'],$_POST['comment']);
+   $ctrlfrontend->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
  }else{
       throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');
     }
@@ -200,7 +199,7 @@ elseif ($_GET['action'] == 'connexion'){
  if (!empty($_POST['pseudo']) && !empty($_POST['pass'])){
   $ctrlAdmin->connexion($_POST['pseudo'],$_POST['pass']);} 
   else {
-   $Session = new \Forteroche\Blog\Session();
+   $Session = new \Forteroche\Blog\MessageFlash();
    $Session->setFlash('Tous les champs ne sont pas remplis','');
    header('Location: index.php?action=connect');
 
@@ -224,7 +223,7 @@ elseif ($_GET['action'] == 'modifPost') {
 }
 
 
-}
+}else{throw new Exception('Désolé une erreur est survenue,votre demande n\'a pas pu aboutir');}
 
    } catch(Exception $e){ // S'il y a eu une erreur, alors...
   
