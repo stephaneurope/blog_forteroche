@@ -44,7 +44,7 @@ class Routeur {
 
       elseif ($_GET['action'] == 'board') {
         session_start();
-        if($_SESSION){
+        if($_SESSION['id'] && $_SESSION['pseudo']){
           $ctrlfrontend->board();
         }else{
          throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
@@ -58,7 +58,7 @@ class Routeur {
       elseif ($_GET['action'] == 'commentAction') {
        require_once('controller/FrontendController.php'); 
        session_start();    
-       if($_SESSION){
+       if($_SESSION['id'] && $_SESSION['pseudo']){
 
         $ctrlBackend->commentAction();}
         else{
@@ -67,7 +67,7 @@ class Routeur {
       }
       elseif ($_GET['action'] == 'addPost'){
        session_start();
-       if($_SESSION){
+       if($_SESSION['id'] && $_SESSION['pseudo']){
 
         $ctrlBackend->addPost();       
       } else{
@@ -77,7 +77,7 @@ class Routeur {
     elseif ($_GET['action'] == 'cleanPost'){
      if (isset($_GET['id']) && $_GET['id'] > 0) {
       session_start();
-      if($_SESSION){
+      if($_SESSION['id'] && $_SESSION['pseudo']){
         $ctrlBackend->cleanPost($_GET['id']);
       } else{
         throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
@@ -90,7 +90,7 @@ class Routeur {
   elseif ($_GET['action'] == 'editPost'){
    if (isset($_GET['id']) && $_GET['id'] > 0) {
     session_start();
-    if($_SESSION){
+    if($_SESSION['id'] && $_SESSION['pseudo']){
       $ctrlBackend->changePost($_GET['id']);
     } else{
      throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
@@ -106,7 +106,7 @@ class Routeur {
 elseif ($_GET['action'] == 'commentsView') {
   if (isset($_GET['id']) && $_GET['id'] > 0) {
   session_start();
-  if($_SESSION){
+  if($_SESSION['id'] && $_SESSION['pseudo']){
     $ctrlBackend->commentsView();
   }
 
@@ -119,7 +119,7 @@ elseif ($_GET['action'] == 'commentsView') {
 }
 elseif ($_GET['action'] == 'editComment'){
  if (isset($_GET['id']) && $_GET['id'] > 0) {
-  if($_SESSION){
+  if($_SESSION['id'] && $_SESSION['pseudo']){
     $ctrlBackend->changeComment($_GET['id']);
   } else{
    throw new Exception('L\' accès à été refusé <br> Vous n êtes pas autorisé à consulter cette page <br> HTTP ERROR 403');
@@ -233,7 +233,10 @@ elseif ($_GET['action'] == 'modifPost') {
    } catch(Exception $e){ // S'il y a eu une erreur, alors...
   session_start();
    $ctrlfrontend->error();?>
- <div class="exception"> <?php echo( $e->getMessage() ."\n"); ?> </div> <?php
+    <div class="exception">
+        <?php echo( $e->getMessage() ."\n"); ?>
+    </div>
+    <?php
    
    
   }
